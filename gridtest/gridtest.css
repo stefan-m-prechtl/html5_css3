@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+    font-size: calc(100% + 0.5vw);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* CSS-Anweisungen für Bildschirme bis 640 Pixel Breite */
+
+body {
+    display: grid;
+    grid-template-rows: 40px 20px auto auto 20px;
+    grid-template-areas: "header" "nav" "main" "aside" "footer";
+    height: 100%;
+}
+
+
+/* CSS-Anweisungen für Bildschirme ab 640 Pixel Breite : 640px / 16px/em = 40em */
+
+@media screen and (min-width: 40em) {
+    body {
+        display: grid;
+        grid-template-areas: "header header " "nav nav" "main aside" "footer footer"
+    }
+}
+
+
+/* CSS-Anweisungen für Bildschirme ab 1024 Pixel Breite:  1024px / 16px/em = 64em */
+
+@media screen and (min-width: 64em) {
+    body {
+        display: grid;
+        grid-template-areas: "header header  header" "nav main aside" "footer footer footer"
+    }
+}
+
+header {
+    grid-area: header;
+    background-color: lightblue;
+}
+
+nav {
+    grid-area: nav;
+    background-color: lightcoral;
+}
+
+main {
+    grid-area: main;
+    background-color: lightcyan;
+}
+
+aside {
+    grid-area: aside;
+    background-color: lightgray;
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightgreen;
+}
