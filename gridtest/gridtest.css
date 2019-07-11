@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-size: calc(100% + 0.5vw);
+    font-size: calc(100% + 0.3vw);
 }
 
 *,
@@ -10,13 +10,40 @@ html {
 }
 
 
+/* Generell - unabhänging von Bildschirmgröße */
+
+.div-nav-button {
+    text-align: center;
+}
+
+.nav-ul {
+    margin: 0;
+}
+
+.nav-ul a:link {
+    text-decoration: none;
+}
+
+
 /* CSS-Anweisungen für Bildschirme bis 640 Pixel Breite */
 
 body {
     display: grid;
-    grid-template-rows: calc(10% + 1vh) calc(15% + 1vh) auto auto calc(5% + 1vh);
+    grid-template-rows: 1fr 1fr 10fr 10fr 1fr;
+    grid-template-columns: 100vw;
     grid-template-areas: "header" "nav" "main" "aside" "footer";
     height: 100%;
+}
+
+.nav-button {
+    display: inline;
+}
+
+.nav-button:hover {}
+
+.nav-li {
+    margin-left: 0;
+    display: none;
 }
 
 
@@ -25,8 +52,19 @@ body {
 @media screen and (min-width: 40em) {
     body {
         display: grid;
-        grid-template-rows: calc(10% + 1vh) calc(15% + 1vh) auto calc(5% + 1vh);
-        grid-template-areas: "header header " "nav nav" "main aside" "footer footer"
+        grid-template-rows: 1fr 1fr 20fr 1fr;
+        grid-template-columns: 50vw 50vw;
+        grid-template-areas: "header header " "nav nav" "main aside" "footer footer";
+        font-size: 90%;
+    }
+    .nav-button {
+        display: none;
+    }
+    .nav-ul {
+        padding-left: 1vh;
+    }
+    .nav-li {
+        display: inline-block;
     }
 }
 
@@ -36,20 +74,43 @@ body {
 @media screen and (min-width: 64em) {
     body {
         display: grid;
-        grid-template-rows: 5vh auto 5vh;
-        grid-template-areas: "header header header" "nav main aside" "footer footer footer"
+        grid-template-rows: 1fr 20fr 1fr;
+        grid-template-columns: 20vw 50vw 30vw;
+        grid-template-areas: "header header header" "nav main aside" "footer footer footer";
+        font-size: 80%;
+    }
+    .nav-button {
+        display: none;
+    }
+    .nav-li {
+        display: block;
     }
 }
 
 header {
+    text-align: center;
     grid-area: header;
     background-color: lightblue;
 }
+
+
+/* Navigation */
 
 nav {
     grid-area: nav;
     background-color: lightcoral;
 }
+
+.nav-li {
+    list-style: none;
+}
+
+.nav-li a:link {
+    text-decoration: none;
+}
+
+
+/* Main */
 
 main {
     grid-area: main;
