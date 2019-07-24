@@ -28,11 +28,26 @@ class TodoList extends HTMLElement {
         this.$input.value = '';
     }
 
+    removeTodo(e) {
+        this.todos.splice(e.detail, 1);
+        this.renderTodoList();
+    }
+
     renderTodoList() {
         this.$todoList.innerHTML = '';
+
         this.todoList.forEach((todo, index) => {
             let $todoItem = document.createElement('todo-item');
             $todoItem.setAttribute('text', todo.text);
+
+            if (todo.checked) {
+                $todoItem.setAttribute('checked', '')
+            }
+
+            $todoItem.setAttribute('index', index);
+
+            $todoItem.addEventListener('onRemove', this.removeTodo.bind(this));
+
             this.$todoList.appendChild($todoItem);
         });
     }
@@ -52,5 +67,5 @@ customElements.define('todo-list', TodoList);
 
 document.querySelector('todo-list').todos = [
     { text: "Make a to-do list", checked: false },
-    { text: "Finish blog post", checked: false }
+    { text: "Finish blog post", checked: true }
 ];
