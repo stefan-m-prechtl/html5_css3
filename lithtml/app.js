@@ -1,6 +1,7 @@
 // Import lit-html
 //import {html, render} from 'https://unpkg.com/lit-html?module';
-import { html, render } from './node_modules/lit-html/lit-html.js';
+//import { html, render } from './node_modules/lit-html/lit-html.js';
+import { html, render } from 'lit-html';
 
 /*
 // Define a template
