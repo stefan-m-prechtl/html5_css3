@@ -1,140 +1,115 @@
 /* CSS für allgemeines Layout */
-@media screen {
 
+@media screen {
     html {
         font-size: 100%;
         overflow-y: scroll;
     }
-
     body {
         background: white;
-        color: #333; 
-
+        color: #333;
         min-width: 300px;
         max-width: 480px;
-        
         font-family: 'Open Sans', Arial, sans-serif;
         font-size: 0.875rem;
-        
     }
-
-    .pageheader, .navmain, main, aside, .pagefooter {
+    .pageheader,
+    .navmain,
+    main,
+    aside,
+    .pagefooter {
         padding: 1em;
     }
-
-    .pageheader, .pagefooter {
+    .pageheader,
+    .pagefooter {
         background: #333;
         color: white;
     }
-    
     .pageheader h1 {
         color: white;
         line-height: 1;
         padding: 0;
         margin: 0 0 0.25em 0;
     }
-    
     .pageheader p.slogan {
         padding: 0;
-        margin: 0;
+        margin-bottom: 10px;
     }
-    
     .pageheader a,
     .pagefooter a a {
         color: white;
         text-decoration: none;
     }
-    
     /* Links */
     main a {
         text-decoration: none;
         outline: none;
     }
-    a:link { color: #d90000; }
-    a:visited { color: #cc6666; }
-    a:hover, 
+    a:link {
+        color: #d90000;
+    }
+    a:visited {
+        color: #cc6666;
+    }
+    a:hover,
     a:focus {
         border-bottom: 1px solid #d90000;
     }
     a:active {
         color: white;
         background-color: #d90000;
-    }    
-
-
-
-/*
-    header {
-        background-color: #f3c600;
-        color: black;
     }
-
-    h1 {
-        font-size: 2.25rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-*/
 }
 
-/* CSS für Navigataion */
-@media screen {
 
+/* CSS für Navigataion */
+
+@media screen {
     .navmain {
         background: #eee;
         color: #333;
     }
-    
     .navmain ul {
         padding: 0;
-        margin: 0;        
+        margin: 0;
     }
-    
     .navmain li {
         display: inline-block;
         padding: 0;
         margin: 0;
     }
-    
     .navmain a {
         text-decoration: none;
         color: #333;
         padding: 1em;
         padding-bottom: 0;
     }
-    
     .navmain li:first-child a {
         padding-left: 0;
     }
-    
     .navmain a.active {
         color: black;
         text-decoration: underline;
     }
 }
 
+
 /* CSS für Inhalte (content) */
+
 @media screen {
-    
-    
     #formEdit {
         margin-top: 1em;
     }
-    
     /* Überschrift auf Startseite */
     .mainpage main h2 {
         margin-bottom: 1em;
     }
-    
     /* Tabelle */
     table {
         border-collapse: collapse;
         margin-bottom: 0.5em;
         width: 100%;
     }
-    
     thead {
         background-color: #d2d1cd;
         border-bottom: 1px solid;
@@ -146,80 +121,70 @@
         background-color: #d2d1cd;
         border-top: 1px solid;
     }
-    
     tbody tr td:first-child {
-         text-align: right;
-         width: 1em;
+        text-align: right;
+        width: 1em;
     }
     tbody tr td:last-child {
-         text-align: left;
-         width: 5em;
+        text-align: left;
+        width: 5em;
     }
-    
     tfoot tr td:first-child {
         text-align: left;
     }
-    
     tfoot tr td:last-child {
         text-align: right;
     }
-    
-    th, td {
+    th,
+    td {
         padding: 0.5em 1em;
     }
-    
     th {
         vertical-align: top;
         text-align: left;
     }
-    
     td {
         vertical-align: top;
         text-align: left;
     }
-    
     address {
         text-align: center;
         font-size: 0.625rem;
         font-style: normal;
         letter-spacing: 2px;
-        line-height: 1.5;      
+        line-height: 1.5;
     }
-    
     address a:link {
         color: beige;
     }
-    
     /* für Aktionen */
     .selectedRow {
         background: #ffff33;
     }
 }
 
+
 /* CSS für Formulare (forms) */
+
 @media screen {
     form {
         background-color: #eee;
         padding: 1em;
         margin-bottom: 1em;
     }
-    
-    form > div {
+    form>div {
         margin-bottom: 0.5em;
     }
     label {
         display: block;
         margin-bottom: 0.25em;
     }
-    
     input[type="text"] {
         cursor: pointer;
         width: 100%;
     }
-    
     select {
         cursor: pointer;
         width: 33%;
     }
-    
 }

@@ -7,7 +7,7 @@ import { $, $$ } from "./vanilla.js";
 const init = () => {
     $('#search').on('click', () => {
         $('#progress').value += 1;
-        alert($('#project').value)
+        alert($('#project').value);
     });
 };
 

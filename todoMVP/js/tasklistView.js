@@ -1,120 +1,98 @@
-"use strict";
+import { $$ } from "./util.js";
 
-class ViewList
-{
-    constructor(idRootElement)
-    {
+export default class ViewList {
+
+    constructor(idRootElement) {
         this.rootElement = document.querySelector(idRootElement);
         this.initEventhandler();
     }
 
-    initEventhandler()
-    {
+    initEventhandler() {
         const btnRefresh = this.$("#btnRefresh");
         const btnClear = this.$("#btnClear");
-        
+
         const lnkAll = this.$("#lnkAll");
         const lnkUndone = this.$("#lnkUndone");
         const lnkDone = this.$("#lnkDone");
 
         btnRefresh.on("click", () => this.presenter.refreshList());
         btnClear.on("click", () => this.presenter.clearList());
-        
-        lnkAll.on("click", (e) => 
-        {
+
+        lnkAll.on("click", (e) => {
             this.presenter.showAllList();
             e.preventDefault();
         });
-        
+
         lnkUndone.on("click", (e) => {
             this.presenter.showUndoneList();
             e.preventDefault();
         });
-        
-        lnkDone.on("click", (e) => 
-        {
+
+        lnkDone.on("click", (e) => {
             this.presenter.showDoneList();
             e.preventDefault();
         });
 
     }
 
-    setPresenter(presenter)
-    {
+    setPresenter(presenter) {
         this.presenter = presenter;
     }
 
-    loaded()
-    {
+    loaded() {
         this.presenter.refreshList();
     }
 
     // Wert für Zeilenzähler (=Counter) in Tabellenfuss setzen
-    setCounter(count)
-    {
+    setCounter(count) {
         let element = this.$("#counter");
         let content = `Anzahl: ${count}`;
         element.innerHTML = content;
     }
 
     // Alle Daten-Zeilen (=Zeilen mit Tasks) in Tabelle(nbody) löschen, Counter rücksetzen
-    clearTable()
-    {
+    clearTable() {
         // Lösche alle Zeilen aus dem Tabellen-Body
         this.$("table").tBodies[0].innerHTML = "";
         // Setze Zähler zurück
         this.setCounter(0);
     }
 
-    showTasks(tasks)
-    {
+    showTasks(tasks) {
         let body = this.$("table").tBodies[0];
         body.innerHTML = "";
-        
-        let rows  = "";
-        
+
+        let rows = "";
+
         // Jede Task als Tabellenzeile anfügen
-        tasks.forEach((t) => 
-        {
-            
+        tasks.forEach((t) => {
+
             let template = this.$("#templateTableRow").innerHTML.trim();
             let checked = "";
-            if (t.done)
-            {
-                checked ="checked";
+            if (t.done) {
+                checked = "checked";
             }
             let id = t.id;
             let title = t.description;
             let priority = t.priority;
-            template = eval('`'+ template +'`');
-            
+            template = eval('`' + template + '`');
+
             rows += template;
-            
-            /*
-            let row = body.insertRow();
-            if (t.done)
-            {
-                row.insertCell().innerHTML = '<input checked type="checkbox">';
-            } 
-            else
-            {
-                row.insertCell().innerHTML = '<input type="checkbox">';
-            }
-            row.insertCell().innerHTML = t.description;
-            row.insertCell().innerHTML = t.priority;
-            */
+
         });
         body.innerHTML = rows;
-        
+
+        // Eventhandler für alle Checkboxen
+        $$('[data-task-id]').addEventListener('click', (e) => this.presenter.toggleState(e.target.getAttribute('data-task-id')));
+
+
         // Setze Zähler neu
         this.setCounter(tasks.size);
     }
 
     // "Root"-Element des Views
-    $(element)
-    {
+    $(element) {
         return this.rootElement.querySelector(element);
     }
 
 }
-

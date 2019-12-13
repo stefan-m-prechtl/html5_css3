@@ -1,142 +1,114 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Set this to the main language of your site -->
-    <head>
-        <meta charset="utf-8">
+<html lang="de">
+<!-- Set this to the main language of your site -->
 
-        <title>Todo Liste mit MVP</title>
+<head>
+    <meta charset="utf-8">
 
-        <!-- Enter a brief description of your page -->
-        <meta name="description" content="Todo Liste mit Vanilla JS und MVP-Pattern">
+    <title>Todo Liste mit MVP</title>
 
-        <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width,
+    <!-- Enter a brief description of your page -->
+    <meta name="description" content="Todo Liste mit Vanilla JS und MVP-Pattern">
+
+    <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width,
         and setting the initial page zoom level to be 1 (initial-scale=1.0), and fixinng width=device-width for iOS9 (shtink-to-fit=no) -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <!-- Gewählten Google Font einbinden -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">  -->
+    <!-- Gewählten Google Font einbinden -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">  -->
 
-        <!-- Add normalize.css which enables browsers to render all elements more consistently and in line with modern standards as it only targets particular styles that need normalizing -->
-        <link href="css/normalize.css" rel="stylesheet" media="all">
-        <!-- Include the site stylesheet -->
-        <link href="css/styles.css" rel="stylesheet" media="all">
+    <!-- Add normalize.css which enables browsers to render all elements more consistently and in line with modern standards as it only targets particular styles that need normalizing -->
+    <link href="css/normalize.css" rel="stylesheet" media="all">
+    <!-- Include the site stylesheet -->
+    <link href="css/styles.css" rel="stylesheet" media="all">
 
-        <!-- Skripte mit defer bereits im Head einbinden -->
-        <script src="js/util.js" defer="defer"></script>
-        <script src="js/tasklistView.js" defer="defer"></script>
-        <script src="js/tasklistPresenter.js" defer="defer"></script>
-        <script src="js/tasklistModel.js" defer="defer"></script>
-        <script src="js/initMain.js" defer="defer"></script>
+    <!-- Skripte mit defer bereits im Head einbinden -->
+    <script src="js/util.js" type="module"></script>
+    <script src="js/tasklistView.js" type="module"></script>
+    <script src="js/tasklistPresenter.js" type="module"></script>
+    <script src="js/tasklistModel.js" type="module"></script>
+    <script src="js/initMain.js" type="module"></script>>
 
-    </head>
-    <body class="mainpage">
+</head>
 
-        <!-- The page header typically contains items such as your site heading, logo and possibly the main site navigation -->
-        <!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page -->
-        <header role="banner" class="pageheader">
+<body class="mainpage">
+    <header class="pageheader">
+        <h1>Todo Liste</h1>
+        <p class="slogan">Eine einfache Webanwendung mit MVP-Pattern in Vanilla JS</p>
 
-            <h1>Todo Liste</h1>
-            <p class="slogan">Eine einfache Webanwendung mit MVP-Pattern in Vanilla JS</p>
+        <nav role="navigation" id="nav" class="navmain">
+            <ul class="navlist">
+                <li><a href="main.html" class="active">Startseite</a></li>
+                <li><a href="kontakt.html">Kontaktseite</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <!-- ARIA: the landmark role "navigation" is added here as the element contains site navigation
-            NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are. -->
-            <nav role="navigation" id="nav" class="navmain">
-                <ul class="navlist">
-                    <li><a href="main.html" class="active">Startseite</a></li>
-                    <li><a href="kontakt.html">Kontaktseite</a></li>
-                </ul>
-            </nav>
-        </header>
+    <main>
+        <div id="viewList">
+            <h2>Übersicht</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Aufgabe</th>
+                        <th>Prio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <a id="lnkAll" href="#">Alle</a>&middot
+                            <a id="lnkUndone" href="#">Offen</a>&middot
+                            <a id="lnkDone" href="#">Erledigt</a>
+                        </td>
+                        <td id="counter">Anzahl: 2</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button id="btnRefresh">Aktualisieren</button>
+            <button id="btnClear">Leeren</button>
 
-        <!-- The <main> element is used to enclose the main content, i.e. that which contains the central topic of a document -->
-        <!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
-        <main> element until user agents implement the required role mapping. -->
-        <main role="main">
-            <div id="viewList">
-                <h2>Übersicht</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>Aufgabe</th>
-                            <th>Prio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2">
-                                <a id="lnkAll" href="#">Alle</a>&middot
-                                <a id="lnkUndone" href="#">Offen</a>&middot
-                                <a id="lnkDone" href="#">Erledigt</a>
-                            </td>
-                            <td id="counter">Anzahl: 2</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <button id="btnRefresh">Aktualisieren</button>
-                <button id="btnClear">Leeren</button>
-                
-                <!-- Template für eine Zeile -->
-                <template id="templateTableRow">
+            <!-- Template für eine Zeile -->
+            <template id="templateTableRow">
                     <tr>
                         <td><input ${checked} type="checkbox" data-task-id="${id}"></td>
                         <td>${title}</td>
                         <td>${priority}</td>
                     </tr>
                 </template>
-                
-            </div>
-            <div id="viewEdit">
-
-                <form id="formEdit" class="formEdit" action="#">
-                    <div>
-                        <label for="descTask">Beschreibung</label>
-                        <input type="text" id="descTask" name="descTask" required>
-                    </div>
-                    <div>
-                        <label for="prioTask">Priorität</label>
-                        <select id="prioTask" name="prioTask" required size="1" >
+        </div>
+        <div id="viewEdit">
+            <form id="formEdit" class="formEdit" action="#">
+                <div>
+                    <label for="descTask">Beschreibung</label>
+                    <input type="text" id="descTask" name="descTask" required>
+                </div>
+                <div>
+                    <label for="prioTask">Priorität</label>
+                    <select id="prioTask" name="prioTask" required size="1">
                             <option>hoch</option>
                             <option>normal</option>
                             <option>niedrig</option>
                         </select>
-                    </div>
-                    <div>
-                        <input type="submit" value="Übernehmen"/>
-                    </div>
-                </form>
-            </div>
-        </main>
-
-        <!-- An <aside> is used to enclose content that is additional to the main content but not essential. If it were removed, the meaning of the main content should not be lost, but the content of the <aside> also retains its meaning.
-        NOTE: the aside is placed outside of the <main> element as while its content is related to the content that is within the <main>
-        element, it is not part of it -->
-        <!-- ARIA: the landmark role "complementary" is added here as it contains supporting information for the main content that remains meaningful even when separated from it -->
-        <!-- 
-        <aside role="complementary">
-
-        <!-- A <header> element is not required here as the heading only contains a single <h3> element ~~>
-        <h3>Did you know?</h3>
-
-        <!-- Content ~~>
-        <p>The article and section elements cause a lot of confusion when people are trying to decide how and when to use them. The article: <a href="http://www.iandevlin.com/blog/2011/04/html5/html5-section-or-article">section or article?</a> might help you choose.</p>
-
-    </aside>
-        -->
-
-
-        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
-        <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
-        <footer role="contentinfo" class="pagefooter">
-            <!-- The <address> element contains contact information for the nearest <article> or <body> element. This example is for the <body> -->
-            <address>
+                </div>
+                <div>
+                    <input type="submit" value="Übernehmen" />
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="pagefooter">
+        <!-- The <address> element contains contact information for the nearest <article> or <body> element. This example is for the <body> -->
+        <address>
                 <p>Entwickler: <a href="mailto:stefanmprechtl@web.de">Stefan M. Prechtl</a>.</p>
                 <p>Webentwicklung mit Html5, CSS, JS ES6</p>
                 <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2016' is a date -->
                 <small>Copyright &copy; <time datetime="2016">2016</time>by esempe</small>
             </address>
-        </footer>
+    </footer>
+</body>
 
-    </body>
 </html>

@@ -88,8 +88,8 @@ body {
 }
 
 header {
-    text-align: center;
     grid-area: header;
+    text-align: center;
     background-color: lightblue;
 }
 

@@ -1,4 +1,5 @@
-"use strict";
+import PresenterList from './tasklistPresenter.js';
+import ViewList from './tasklistView.js';
 
 /*
  * Initialisierung: 
