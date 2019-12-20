@@ -1,4 +1,4 @@
-import Task from './tasklistModel.js';
+import Task from './taskListModel.js';
 
 export default class PresenterList {
     constructor(view) {
@@ -48,10 +48,15 @@ export default class PresenterList {
     // Eventhandlder für Click "Status"
     toggleState(id) {
 
-        console.log(id);
-        //let task = Array.from(this.tasks).find((t) => t.id === id);
-        console.log((Array.from(this.tasks).filter((t) => t.id === id)));
+        let task = [...this.tasks].find((t) => t.id === parseInt(id));
+        task.toggleState();
+    }
 
+    // Eventhandler für Click "Übernehmen"
+    addTask(description, priority) {
+        const newTask = Task.create(description, priority);
+        this.tasks = [...this.tasks, newTask];
+        this.showAllList();
     }
 
     // *****************************************************************

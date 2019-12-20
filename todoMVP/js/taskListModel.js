@@ -34,4 +34,8 @@ export default class Task extends BaseObj {
     static create(description, priority) {
         return new Task(description, priority);
     }
+
+    toggleState() {
+        this.done = !this.done;
+    }
 }

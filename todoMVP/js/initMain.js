@@ -1,5 +1,8 @@
-import PresenterList from './tasklistPresenter.js';
-import ViewList from './tasklistView.js';
+import PresenterList from './taskListPresenter.js';
+import ViewList from './taskListView.js';
+
+import PresenterEdit from './taskEditPresenter.js';
+import ViewEdit from './taskEditView.js';
 
 /*
  * Initialisierung: 
@@ -7,8 +10,10 @@ import ViewList from './tasklistView.js';
  * - initiale Startansicht zeigen
  */
 function init() {
-    const mainListPresenter = new PresenterList(new ViewList("#viewList"));
-    mainListPresenter.viewLoaded();
+    const viewListPresenter = new PresenterList(new ViewList("#viewList"));
+    const viewEditPresenter = new PresenterEdit(new ViewEdit("#viewEdit"));
+    viewListPresenter.viewLoaded();
+
 }
 
 document.addEventListener('DOMContentLoaded', init);
