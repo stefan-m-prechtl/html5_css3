@@ -1,4 +1,4 @@
-import { $$ } from "./util.js";
+import { $$ } from './util.js';
 
 export default class ViewList {
 
@@ -32,7 +32,6 @@ export default class ViewList {
             this.presenter.showDoneList();
             e.preventDefault();
         });
-
     }
 
     setPresenter(presenter) {
