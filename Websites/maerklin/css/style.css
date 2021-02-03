@@ -1,0 +1,23 @@
+/* Basis CSS-Stylesheet */
+/* 1rem: Größe der Schrift im Stammelement <html> */
+
+body {
+    background-color: floralwhite;
+    color: black;
+}
+
+header {
+    background-color: steelblue;
+    color: white;
+    padding: 1rem;
+}
+
+/* Beschreibungslisten */
+dt {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+}

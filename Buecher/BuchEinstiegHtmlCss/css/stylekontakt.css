@@ -1,0 +1,19 @@
+form {
+    max-width: 600px;
+    background-color: whitesmoke;
+    padding: 1rem;
+}
+
+div {
+    margin-bottom: 1rem;
+}
+
+
+label {
+   
+    cursor: pointer;
+}
+
+label[for] {
+    display: block;
+}

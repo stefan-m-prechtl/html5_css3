@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- id "top" als Springziel für "Navigations"-Link im Footer-->
+<html lang="de" id="top">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Übungsseite für Html/CSS" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Startseite - Einführung in HTML & CSS</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>
+            <img src="img/html+css-logo-444.png" alt="Logo" width="222" height="33" />
+        </h1>
+        <p>Webseiten erstellen und gestalten</p>
+    </header>
+    <!-- Navigations als ungeordnete Liste von Hyperlinsks-->
+    <nav class="site-nav">
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Über mich</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <main class="site-content" id="content">
+        <section class="content-intro">
+            <h2>Willkommen</h2>
+            <p>
+                Webseiten bestehen aus <strong>rechteckigen Kästchen</strong>. Alles
+                Runde ist entweder Trick, Grafik oder beides.
+            </p>
+            <p>
+                Beim Umgang mit diesen Kästchen haben <em>HTML</em> und
+                <em>CSS</em> klar getrennte Aufgaben.
+            </p>
+            <ul>
+                <li>
+                    HTML-Elemente strukturieren die Webseite und erstellen die Kästchen.
+                </li>
+                <li>CSS-Regeln gestalten die Kästchen und deren Inhalt</li>
+            </ul>
+            <p>
+                Beide Sprachen arbeiten bei der Erstellung und Gestaltung von
+                Webseiten eng zusammen.Besuchen Sie
+                <a href="http://www.esempe.de" target="_blank" rel="noopener noreferrer">meine Website</a>
+                für weitere Informationen
+            </p>
+        </section>
+        <section class="infoboxen">
+            <h2>Die Bereiche der Website</h2>
+            <article class="infobox">
+                <h3>News</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+                    tempora excepturi ut tempore, eos voluptatibus eaque dolore
+                    dignissimos? Asperiores maxime sequi odio molestias repellendus, ut
+                    vero dolores itaque deserunt aspernatur.
+                </p>
+                <p><a href="#">Ab zum Blog</a></p>
+            </article>
+            <article class="infobox">
+                <h3>Über uns</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p><a href="#">Wer wir sind</a></p>
+            </article>
+            <article class="infobox">
+                <h3>Kontakt</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p><a href="#">Hallo sagen</a></p>
+            </article>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <!-- Hyperlink zur ID "top" auf dieser Seite -->
+        <a href="#top">nach oben</a>
+    </footer>
+</body>
+
+</html>

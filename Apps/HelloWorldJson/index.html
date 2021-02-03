@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World mit HTML5 und Vanila JS</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Organized Code with Modules
+    Native JavaScript modules are like ordinary JavaScript files with a few key differences. They should be loaded with the type="module" modifier. 
+    Some developers prefer to use the .mjs suffix to distinguish them from other JavaScript source, but that is not required. Modules are unique in a few ways:
+
+    By default, they are parsed and executed in “strict mode”
+    Modules can provide exports to be consumed by other modules
+    Modules can import variables, functions, and objects from child modules
+    Modules operate in their own scope and don’t have to be wrapped in immediately invoked function expressions
+
+    There are four steps in the lifecycle of a module.
+
+        First, the module is parsed and validated
+        Second, the module is loaded
+        Third, related modules are linked based on their imports and exports
+        Finally, modules are executed
+
+    Any code not wrapped in a function is executed immediately in step 4.
+    -->
+    <script type="module" src="js/main.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Lorem, ipsum.</h1>
+        <p>Lorem, ipsum.</p>
+        <div id="jsondata"></div>
+    </main>
+</body>
+
+</html>

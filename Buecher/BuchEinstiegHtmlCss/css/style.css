@@ -1,0 +1,91 @@
+html {
+  /* Sanftes Scrollen innerhalb einer Seite */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: floralwhite;
+  color: black;
+}
+
+/* ----------------------------------------------- */
+/* Header                                          */
+.site-header {
+  background-color: steelblue;
+  color: white;
+  /* 1rem: so groß wie die Schrift des Stammelements html*/
+  padding: 1rem;
+}
+
+.site-header h1 {
+  margin-bottom: 0;
+}
+
+.site-header p {
+  margin-top: 0;
+}
+
+/* ----------------------------------------------- */
+/* Navigationsleiste                               */
+.site-nav {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.site-nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav li {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+/* Hyperlinks in Navigationsleiste*/
+.site-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ----------------------------------------------- */
+/* Fußbereich (footer)                             */
+footer {
+  background-color: black;
+  color: white;
+  text-align: right;
+  padding: 0.5rem;
+}
+
+/* Hyperlinks im Fußbereich */
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* "Automatisches Zoomen" der Bilder */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Section Infoboxen */
+.infoboxen {
+  background-color: whitesmoke;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+/* Article Infobox */
+.infobox {
+  text-align: center;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+}

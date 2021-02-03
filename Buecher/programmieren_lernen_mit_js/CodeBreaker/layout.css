@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import url('normalize.css');
+
+/* Modernes Layout mit Border-Box */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #fff;
+    margin-left: 25px;
+}
+
+button {
+    font-size: 36pt;
+    color:cornflowerblue;
+    text-shadow: grey 0.05em 0.1em;
+}
