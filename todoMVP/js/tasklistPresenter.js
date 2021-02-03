@@ -13,13 +13,14 @@ export default class PresenterList {
     // 
     // Eventhandler für Document geladen
     viewLoaded() {
-            this.view.loaded();
-        }
-        // Eventhandler für Button "Leeren"
+        this.view.loaded();
+    }
+    // Eventhandler für Button "Leeren"
     clearList() {
-            this.view.clearTable();
-        }
-        // Eventhandler für Button "Aktualisieren"
+        this.view.clearTable();
+    }
+
+    // Eventhandler für Button "Aktualisieren"
     refreshList() {
         this.tasks.clear();
         this.tasks = this.loadTasks();
@@ -47,11 +48,9 @@ export default class PresenterList {
 
     // Eventhandlder für Click "Status"
     toggleState(id) {
-
-        console.log(id);
-        //let task = Array.from(this.tasks).find((t) => t.id === id);
-        console.log((Array.from(this.tasks).filter((t) => t.id === id)));
-
+        let allTaskArray = [...this.tasks];
+        let tmp = allTaskArray.filter((t) => t.id === parseInt(id));
+        console.log(tmp.length);
     }
 
     // *****************************************************************

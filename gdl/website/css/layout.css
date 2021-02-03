@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import url('normalize.css');
+
+/* Modernes Layout mit Border-Box */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    /* background-color: #fff; Weiß */
+}
+
+
+
+/* CSS Default: kleiner 640 Pixel */
+
+
+/* Tabletversion: größer 640 Pixel */
+
+/* Bildschirm: größer 1024 Pixel /*
+
+/* Bildschirm: größer 1280 Pixel /*
