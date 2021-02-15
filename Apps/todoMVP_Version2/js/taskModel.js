@@ -17,7 +17,7 @@ export default class Model {
   toggleTask(id) {
 
     // Status in Task-Objekt "toggeln"
-    let task = this.listTask.find((t) => t.id === parseInt(id));
+    let task = this.listTasks.find((t) => t.id === parseInt(id));
     task.toggleState();
   }
 
