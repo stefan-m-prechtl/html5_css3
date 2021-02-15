@@ -1,10 +1,12 @@
-import Task from "./taskListModel.js";
+import Task from "./Task.js";
+import Model from "./taskModel.js";
 
 export default class PresenterList {
   constructor(view) {
     this.view = view;
     this.view.setPresenter(this);
-    
+    this.model = new Model();
+
   }
 
   // *****************************************************************
@@ -28,6 +30,37 @@ export default class PresenterList {
       result.add(Task.create("Task" + i, "normal"));
     }
 
-    return result;
+    // Modell & View aktualisieren
+    this.model.listTasks = result;
+    this.view.showTasks(result)
+  }
+
+  clearTasks() {
+    // Modell & View aktualisieren
+    this.model.reset()
+    this.view.clearTasks();
+  }
+
+  toggleTask(id) {
+    this.model.toggleTask(id);
+    this.view.updateTask(id);
+  }
+
+  showAllTasks() {
+    let tasks = this.model.listTasks;
+    this.view.showTasks(tasks)
+  }
+
+  showUndoneTasks() {
+    let allTaskArray = [...this.model.listTasks];
+    let undoneTaskArray = allTaskArray.filter((t) => t.done === false);
+    this.view.showTasks(undoneTaskArray);
+
+  }
+
+  showDoneTasks() {
+    let allTaskArray = [...this.model.listTasks];
+    let doneTaskArray = allTaskArray.filter((t) => t.done === true);
+    this.view.showTasks(doneTaskArray);
   }
 }

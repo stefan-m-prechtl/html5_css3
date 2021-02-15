@@ -1,4 +1,4 @@
-import Task from './taskListModel.js';
+import Task from './Task.js';
 
 export default class PresenterEdit {
     constructor(view) {

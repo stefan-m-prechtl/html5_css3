@@ -1,4 +1,5 @@
 import { $$ } from "./util.js";
+import Task from "./Task.js";
 
 export default class ViewList {
   /**
@@ -7,8 +8,6 @@ export default class ViewList {
    */
   constructor(idRootElement) {
     this.rootElement = document.querySelector(idRootElement);
-    this.tasks = new Set();
-
     this.initEventhandler();
   }
 
@@ -29,17 +28,31 @@ export default class ViewList {
     // Gui-Elemente aus DOM holen (über Rootelement des Views!)
     const btnRefresh = this.$("#btnRefresh");
     const btnClear = this.$("#btnClear");
+    const lnkAllTasks = this.$("#lnkAll")
+    const lnkUndoneTasks = this.$("#lnkUndone")
+    const lnkDoneTasks = this.$("#lnkDone")
+
 
     // Event-Listener registrieren
     btnRefresh.on("click", () => {
-      this.tasks = this.presenter.loadTasks();
-      this.showTasks(this.tasks);
+      this.presenter.loadTasks();
     });
 
     btnClear.on("click", () => {
-      this.tasks.clear();
-      this.clearTasks();
+      this.presenter.clearTasks();
     });
+
+    lnkAllTasks.on("click", () => {
+      this.presenter.showAllTasks();
+    })
+
+    lnkUndoneTasks.on("click", () => {
+      this.presenter.showUndoneTasks();
+    })
+
+    lnkDoneTasks.on("click", () => {
+      this.presenter.showDoneTasks();
+    })
   }
 
   clearTasks() {
@@ -76,7 +89,10 @@ export default class ViewList {
         description.classList.add("done");
       }
       state.on("click", (event) => {
-        this.toggleTask(event.target);
+        // TaskId aus Attribut holen
+        let elem = event.target
+        let id = elem.getAttribute("data-task-id");
+        this.presenter.toggleTask(id);
       });
 
       description.textContent = task.description;
@@ -86,11 +102,12 @@ export default class ViewList {
     });
   }
 
-  /**
-   *
-   * @param {HTMLElement} inputElem
-   */
-  toggleTask(inputElem) {
+
+  updateTask(id) {
+
+    let selektor = `[data-task-id="${id}"]`
+    let inputElem = this.$(selektor)
+
     // HTML-Anzeige anpassen
     let description = inputElem.parentNode.nextElementSibling;
     if (inputElem.checked) {
@@ -99,9 +116,6 @@ export default class ViewList {
       description.classList.remove("done");
     }
 
-    // Status in Task-Objekt "toggeln"
-    let id = inputElem.getAttribute("data-task-id");
-    let task = [...this.tasks].find((t) => t.id === parseInt(id));
-    task.toggleState();
+
   }
 }
