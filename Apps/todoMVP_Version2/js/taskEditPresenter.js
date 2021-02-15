@@ -1,10 +1,11 @@
 import Task from './Task.js';
 
 export default class PresenterEdit {
-    constructor(view) {
+    constructor(view, model) {
         this.view = view;
         this.view.setPresenter(this);
-        this.task = Task.create('Neu', 'normal');
+        this.model = model;
+
     }
 
     // *****************************************************************
@@ -14,7 +15,9 @@ export default class PresenterEdit {
 
     // Eventhandler für Click "Übernehmen"
     addTask(description, priority) {
-        this.task = Task.create(description, priority);
+        let task = new Task(description, priority);
+        this.model.addTask(task);
+
     }
 
 }

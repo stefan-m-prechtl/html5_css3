@@ -8,10 +8,11 @@ export default class ViewEdit {
     initEventhandler() {
         const btnSubmit = this.$("#submit");
 
-        btnSubmit.on('click', () => {
-            const description = this.$('descTask');
-            const priority = this.$('prioTask');
+        btnSubmit.on('click', (event) => {
+            const description = this.$('#descTask').value;
+            const priority = this.$('#prioTask').value;
             this.presenter.addTask(description, priority);
+            event.preventDefault();
         });
     }
 

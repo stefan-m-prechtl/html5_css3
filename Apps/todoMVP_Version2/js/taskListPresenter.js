@@ -2,10 +2,10 @@ import Task from "./Task.js";
 import Model from "./taskModel.js";
 
 export default class PresenterList {
-  constructor(view) {
+  constructor(view, model) {
     this.view = view;
     this.view.setPresenter(this);
-    this.model = new Model();
+    this.model = model;
 
   }
 

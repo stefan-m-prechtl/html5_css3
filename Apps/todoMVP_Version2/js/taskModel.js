@@ -21,4 +21,8 @@ export default class Model {
     task.toggleState();
   }
 
+  addTask(task) {
+    this.listTasks.add(task);
+  }
+
 }
