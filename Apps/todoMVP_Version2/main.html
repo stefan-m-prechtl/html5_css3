@@ -47,7 +47,7 @@
     </header>
 
     <main>
-        <div id="viewList">
+        <div id="viewList" class="viewList">
             <h2>Übersicht</h2>
             <table>
                 <thead>
@@ -66,7 +66,7 @@
                             <a id="lnkUndone" href="#">Offen</a>&middot
                             <a id="lnkDone" href="#">Erledigt</a>
                         </td>
-                        <td id="counter">Anzahl: 2</td>
+                        <td>Anzahl: <span id="counter">0</span></td>
                     </tr>
                 </tfoot>
             </table>
@@ -82,11 +82,11 @@
                 </tr>
             </template>
         </div>
-        <div id="viewEdit">
+        <div id="viewEdit" class="viewEdit">
             <form id="formEdit" class="formEdit" action="#">
                 <div>
                     <label for="descTask">Beschreibung</label>
-                    <input type="text" id="descTask" name="descTask" required>
+                    <input type="text" id="descTask" name="descTask" placeholder="neue Aufgabe..." required>
                 </div>
                 <div>
                     <label for="prioTask">Priorität</label>

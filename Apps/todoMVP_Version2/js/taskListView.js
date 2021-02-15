@@ -56,6 +56,8 @@ export default class ViewList {
   }
 
   clearTasks() {
+    let counter = this.$("#counter")
+    counter.innerHTML = 0;
     // Ersten Tabellen-Body aus DOM holen und leeren
     let tablebody = this.$("table").tBodies[0];
     tablebody.innerHTML = "";
@@ -63,9 +65,14 @@ export default class ViewList {
 
   /**
    *
-   * @param {Set} tasks
+   * @param {Array} tasks
    */
   showTasks(tasks) {
+
+    // Zähler aktualisieren
+    let counter = this.$("#counter")
+    counter.innerHTML = tasks.length
+
     // Ersten Tabellen-Body aus DOM holen und leeren
     let tablebody = this.$("table").tBodies[0];
     tablebody.innerHTML = "";
@@ -102,7 +109,10 @@ export default class ViewList {
     });
   }
 
-
+  /**
+   * 
+   * @param {Number} id 
+   */
   updateTask(id) {
 
     let selektor = `[data-task-id="${id}"]`
@@ -115,7 +125,6 @@ export default class ViewList {
     } else {
       description.classList.remove("done");
     }
-
-
   }
+
 }

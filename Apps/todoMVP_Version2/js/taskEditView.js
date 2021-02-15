@@ -11,8 +11,17 @@ export default class ViewEdit {
         btnSubmit.on('click', (event) => {
             const description = this.$('#descTask').value;
             const priority = this.$('#prioTask').value;
-            this.presenter.addTask(description, priority);
+
+            if (description.trim().length == 0) {
+                return undefined;
+            }
+
             event.preventDefault();
+
+            this.presenter.addTask(description, priority);
+
+
+
         });
     }
 

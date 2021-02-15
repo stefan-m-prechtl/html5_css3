@@ -6,7 +6,7 @@ export default class Model {
   }
 
   reset() {
-    this.listTasks = new Set()
+    this.listTasks = []
     this.currentTask = undefined
   }
 
@@ -17,12 +17,12 @@ export default class Model {
   toggleTask(id) {
 
     // Status in Task-Objekt "toggeln"
-    let task = [...this.listTasks].find((t) => t.id === parseInt(id));
+    let task = this.listTask.find((t) => t.id === parseInt(id));
     task.toggleState();
   }
 
   addTask(task) {
-    this.listTasks.add(task);
+    this.listTasks.push(task);
   }
 
 }

@@ -2,6 +2,11 @@ import Task from "./Task.js";
 import Model from "./taskModel.js";
 
 export default class PresenterList {
+  /**
+   * 
+   * @param {*} view 
+   * @param {*} model 
+   */
   constructor(view, model) {
     this.view = view;
     this.view.setPresenter(this);
@@ -17,17 +22,17 @@ export default class PresenterList {
   // GUI-unabhängige Methoden: Logik
   // *****************************************************************
   loadTasks() {
-    let result = new Set();
+    let result = []
 
-    result.add(Task.create("JS Buch lesen", "normal"));
-    result.add(Task.create("Backup erstellen", "hoch"));
+    result.push(Task.create("JS Buch lesen", "normal"));
+    result.push(Task.create("Backup erstellen", "hoch"));
     let task = Task.create("Französich lernen", "hoch");
     task.done = true;
 
-    result.add(task);
+    result.push(task);
 
     for (var i = 0, max = 10; i < max; i++) {
-      result.add(Task.create("Task" + i, "normal"));
+      result.push(Task.create("Task" + i, "normal"));
     }
 
     // Modell & View aktualisieren
@@ -52,15 +57,12 @@ export default class PresenterList {
   }
 
   showUndoneTasks() {
-    let allTaskArray = [...this.model.listTasks];
-    let undoneTaskArray = allTaskArray.filter((t) => t.done === false);
+    let undoneTaskArray = this.model.listTasks.filter((t) => t.done === false);
     this.view.showTasks(undoneTaskArray);
-
   }
 
   showDoneTasks() {
-    let allTaskArray = [...this.model.listTasks];
-    let doneTaskArray = allTaskArray.filter((t) => t.done === true);
+    let doneTaskArray = this.model.listTasks.filter((t) => t.done === true);
     this.view.showTasks(doneTaskArray);
   }
 }
