@@ -43,10 +43,15 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Hyperlinks in Navigationsleiste*/
+/* Alle Hyperlinks in Navigationsleiste*/
 .site-nav a {
   color: white;
   text-decoration: none;
+}
+
+/* Hyperlink für aktuelle Seite */
+.current a {
+  text-decoration: underline;
 }
 
 /* ----------------------------------------------- */
@@ -64,7 +69,21 @@ footer a {
   text-decoration: none;
 }
 
+.meta-nav ul {
+  margin: 0;
+}
+
+.meta-nav li {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+
 /* "Automatisches Zoomen" der Bilder */
+img {
+  display: block;
+}
+/*
 img {
   max-width: 100%;
   height: auto;
@@ -74,7 +93,7 @@ figure {
   text-align: center;
   margin-left: 0;
   margin-right: 0;
-}
+}*/
 
 /* Section Infoboxen */
 .infoboxen {
@@ -89,3 +108,55 @@ figure {
   padding: 1rem;
   margin: 1rem;
 }
+
+/* ----------------------------------------------- */
+/* News-Seite                                      */
+.beitragsliste h3, .linklisten h3 {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgb(235, 222, 222);
+  margin-bottom: 0.25rem;
+}
+
+.beitragsliste article, .linklisten section {
+  margin-bottom: 3rem;
+}
+
+.beitragsinfo {
+  color: gray;
+}
+
+/* ----------------------------------------------- */
+/* Kontakt-Seite                                   */
+address {
+  font-style: normal;
+}
+
+form {
+  max-width: 600px;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+.kontaktformular div {
+  margin-bottom: 1rem;
+}
+
+.kontaktformular label {
+ 
+  cursor: pointer;
+}
+
+.kontaktformular label[for] {
+  display: block;
+}
+
+.kontaktformular button {
+  background-color: grey;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  
+}
+

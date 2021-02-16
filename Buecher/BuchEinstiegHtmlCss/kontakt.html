@@ -1,40 +1,77 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<!-- id "top" als Springziel für "Navigations"-Link im Footer-->
+<html lang="de" id="top">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/stylekontakt.css">
-    <title>Kontaktformular – Einführung in HTML + CSS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Übungsseite für Html/CSS" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Kontakt - Einführung in HTML & CSS</title>
 </head>
 
-<body>
-    <h1>Kontaktformular</h1>
-    <form action="#" method="post">
-        <div>
-            <label for="besuchername">Ihr Name:</label>
-            <input type="text" name="besuchername" id="besuchername" required>
-        </div>
-        <div>
-            <label for="besuchermail">Ihre E-Mail:</label>
-            <input type="email" name="besuchermail" id="besuchermail" required>
-        </div>
-        <div>
-            <label for="nachricht">Ihre Nachricht:</label>
-            <textarea name="nachricht" id="nachricht" cols="30" rows="10" required></textarea>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" name="dsgvo" id="dsgvo" required>
-                Einverständnis mit Datenschutz erklären
-            </label>(<a href="#" target="_blank">Datenschutzerklärung</a>) </div>
-        <button type="submit" value="gesendet">Absenden</button>
-
-    </form>
-
-
-
-
+<body class="seite-news">
+    <header class="site-header">
+        <h1>
+            <a href="index.html">
+                <img src="img/html+css-logo-444.png" alt="Logo" width="222" height="33" />
+            </a>
+        </h1>
+        <p>Webseiten erstellen und gestalten</p>
+    </header>
+    <!-- Navigations als ungeordnete Liste von Hyperlinsks-->
+    <nav class="site-nav">
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="ueber-uns.html">Über mich</a></li>
+            <li  class="current"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <main class="site-content" id="content">
+        <section class="content-intro">
+            <h2>Kontakt</h2>
+            <address>
+                <p>Stefan Prechtl <br> Hauptstrasse 3 <br> 98765 Neustadt</p>
+            </address>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab alias a impedit voluptates repellat obcaecati quis laboriosam id labore, eligendi non iusto quo quas possimus temporibus ex officia error.</p>
+        </section>
+        <section class="kontaktformular" id="kontaktformular">
+            <h2>Kontaktformular</h2>
+                <p>Bitte alle Felder ausfüllen.</p>
+                <form action="#" method="post">
+                    <div>
+                        <label for="besuchername">Ihr Name:</label>
+                        <input type="text" name="besuchername" id="besuchername" required>
+                    </div>
+                    <div>
+                        <label for="besuchermail">Ihre E-Mail:</label>
+                        <input type="email" name="besuchermail" id="besuchermail" required>
+                    </div>
+                    <div>
+                        <label for="nachricht">Ihre Nachricht:</label>
+                        <textarea name="nachricht" id="nachricht" cols="32" rows="10" required></textarea>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="dsgvo" id="dsgvo" required>
+                            Einverständnis mit Datenschutz erklären
+                        </label>(<a href="#" target="_blank">Datenschutzerklärung</a>) </div>
+                    <button type="submit" value="gesendet">Absenden</button>
+                </form>
+            
+        </section>
+    </main>
+    <footer class="site-footer">
+        <nav class="meta-nav">
+        <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <!-- Hyperlink zur ID "top" auf dieser Seite -->
+            <li><a href="#top">nach oben</a></li>
+        </ul>
+    </nav>
+    </footer>
 </body>
 
 </html>

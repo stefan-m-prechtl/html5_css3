@@ -10,7 +10,7 @@
     <title>Startseite - Einführung in HTML & CSS</title>
 </head>
 
-<body>
+<body class="startseite">
     <header class="site-header">
         <h1>
             <img src="img/html+css-logo-444.png" alt="Logo" width="222" height="33" />
@@ -20,9 +20,9 @@
     <!-- Navigations als ungeordnete Liste von Hyperlinsks-->
     <nav class="site-nav">
         <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Über mich</a></li>
+            <li class="current"><a href="index.html">Startseite</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="ueber-uns.html">Über mich</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
@@ -75,8 +75,14 @@
         </section>
     </main>
     <footer class="site-footer">
-        <!-- Hyperlink zur ID "top" auf dieser Seite -->
-        <a href="#top">nach oben</a>
+        <nav class="meta-nav">
+        <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <!-- Hyperlink zur ID "top" auf dieser Seite -->
+            <li><a href="#top">nach oben</a></li>
+        </ul>
+    </nav>
     </footer>
 </body>
 
