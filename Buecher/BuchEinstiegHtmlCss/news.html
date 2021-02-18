@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- id "top" als Springziel für "Navigations"-Link im Footer-->
+<html lang="de" id="top">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Übungsseite für Html/CSS" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>News - Einführung in HTML & CSS</title>
+</head>
+
+<body class="seite-news">
+    <header class="site-header">
+        <h1>
+            <a href="index.html">
+                <img src="img/html+css-logo-444.png" alt="Logo" width="222" height="33" />
+            </a>
+        </h1>
+        <p>Webseiten erstellen und gestalten</p>
+    </header>
+    <!-- Navigations als ungeordnete Liste von Hyperlinsks-->
+    <nav class="site-nav">
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li class="current"><a href="news.html">News</a></li>
+            <li><a href="ueber-uns.html">Über mich</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <main class="site-content" id="content">
+        <section class="content-intro">
+            <h2>News</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ab alias a impedit voluptates repellat obcaecati quis laboriosam id labore, eligendi non iusto quo quas possimus temporibus ex officia error.</p>
+            
+        </section>
+        <section class="beitragsliste">
+            <h2>Beiträge</h2>
+            <article>
+                <header>
+                    <h3>Webstandards</h3>
+                    <p class="beitragsinfo">
+                        <span class="autor">Stefan Prechtl</span> |
+                        <time datetime="2021-02-16">16.02.2021</time>
+                    </p>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nobis assumenda aliquam suscipit totam dolor est harum ut! Sed consectetur reprehenderit enim distinctio vitae commodi.</p>
+                <p><a href="#" class="read-more-link">Weiterlesen...</a></p>
+            </article>
+            <article>
+                <header>
+                    <h3>CSS3-Infos</h3>
+                    <p class="beitragsinfo">
+                        <span class="autor">Stefan Prechtl</span> |
+                        <time datetime="2021-01-16">16.01.2021</time>
+                    </p>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nobis assumenda aliquam suscipit totam dolor est harum ut! Sed consectetur reprehenderit enim distinctio vitae commodi.</p>
+                <p><a href="#" class="read-more-link">Weiterlesen...</a></p>
+            </article>
+            <article>
+                <header>
+                    <h3>Html-Editoren</h3>
+                    <p class="beitragsinfo">
+                        <span class="autor">Stefan Prechtl</span> |
+                        <time datetime="2021-01-06">06.01.2021</time>
+                    </p>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis nobis assumenda aliquam suscipit totam dolor est harum ut! Sed consectetur reprehenderit enim distinctio vitae commodi.</p>
+                <p><a href="#" class="read-more-link">Weiterlesen...</a></p>
+            </article>
+        </section>
+        <aside class="linklisten">
+            <h2>Linklisten</h2>
+                <section class="tools">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="#">Brackets</a></li>
+                        <li><a href="#">Blindtext-Generator</a></li>
+                        <li><a href="#">Html-Validator</a></li>
+                    </ul>
+                </section>
+            <section class="referenzen">
+                <h3>Referenzen</h3>
+                <ul>
+                    <li><a href="#">Html5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">Javascript</a></li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+    <footer class="site-footer">
+        <nav class="meta-nav">
+        <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <!-- Hyperlink zur ID "top" auf dieser Seite -->
+            <li><a href="#top">nach oben</a></li>
+        </ul>
+    </nav>
+    </footer>
+</body>
+
+</html>
