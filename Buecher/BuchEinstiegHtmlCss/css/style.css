@@ -6,6 +6,29 @@ html {
 body {
   background-color: floralwhite;
   color: black;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* Überschriften */
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h1 {
+  font-size: 1rem;
+  font-variant: small-caps;
 }
 
 /* ----------------------------------------------- */
@@ -28,7 +51,7 @@ body {
 /* ----------------------------------------------- */
 /* Navigationsleiste                               */
 .site-nav {
-  background-color: black;
+  background-color: #333;
   color: white;
   padding: 0.5rem;
   margin: 1rem 0;
@@ -57,7 +80,8 @@ body {
 /* ----------------------------------------------- */
 /* Fußbereich (footer)                             */
 footer {
-  background-color: black;
+  font-size: smaller;
+  background-color: #333;
   color: white;
   text-align: right;
   padding: 0.5rem;
@@ -95,11 +119,35 @@ figure {
   margin-right: 0;
 }*/
 
+
+.site-content {
+  line-height: 1.5;
+}
+
+
+/* Gestaltung von Hyperlinks: Reihenfolge wie hier einhalten! */
+.site-content a:link {
+  color: #0b74b8;
+}
+
+.site-content a:visited {
+  color: #36abde;
+}
+
+.site-content a:hover, .site-content a:focus {
+  color: #f5662e;
+}
+
+.site-content a:active {
+  color: #d90000;
+}
+
 /* Section Infoboxen */
 .infoboxen {
-  background-color: whitesmoke;
+  background-color: #eee;
   padding: 1rem;
   margin-bottom: 1rem;
+  border: 1px solid rgb(204, 196, 196);
 }
 /* Article Infobox */
 .infobox {
@@ -133,7 +181,7 @@ address {
 
 form {
   max-width: 600px;
-  background-color: whitesmoke;
+  background-color: #eee;
   padding: 1rem;
 }
 
@@ -151,7 +199,7 @@ form {
 }
 
 .kontaktformular button {
-  background-color: grey;
+  background-color: #0b74b8;
   color: white;
   padding: 0.5rem;
   border: none;
