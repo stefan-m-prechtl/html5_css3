@@ -1,0 +1,33 @@
+/* ==========================================================
+- Einstellungen für den Inhaltsbereicht (<main>)
+========================================================== */
+
+/* ---------------------------------------------------------
+    Gestaltung der Links
+----------------------------------------------------------*/
+
+.site-content a[href^="http"]::after {
+    content: " \2197"
+}
+
+/* Reihenfolge wie hier einhalten! */
+
+.site-content a:link {
+    color: #0b74b8;
+}
+
+.site-content a:visited {
+    color: #36abde;
+}
+
+.site-content a:hover, .site-content a:focus {
+    color: #f5662e;
+}
+
+.site-content a:active {
+    color: #d90000;
+}
+
+/* ---------------------------------------------------------
+    Gestaltung der Infoboxen
+----------------------------------------------------------*/
