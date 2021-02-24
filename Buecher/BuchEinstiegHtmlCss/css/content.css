@@ -7,7 +7,7 @@
 ----------------------------------------------------------*/
 
 .site-content a[href^="http"]::after {
-    content: " \2197"
+    content: " \2197";
 }
 
 /* Reihenfolge wie hier einhalten! */
@@ -31,3 +31,55 @@
 /* ---------------------------------------------------------
     Gestaltung der Infoboxen
 ----------------------------------------------------------*/
+
+.infoboxen {
+    background-color: #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(204, 196, 196);
+}
+
+.infobox {
+    text-align: center;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/* ---------------------------------------------------------
+    Gestaltung der Kundenfeedbacks
+----------------------------------------------------------*/
+
+.kundenstimme {
+    text-align: center;
+    background-color: #eee;
+    background-image: linear-gradient(to right, #eee, whitesmoke);
+    box-shadow: 0 1px 3px rgb(51, 51, 51, 0.3);
+    padding: 1rem;
+    border-left: 5px solid #0b74b8;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.kundenstimme p:first-child {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------
+    Gestaltung der News
+----------------------------------------------------------*/
+
+.beitragsliste h3, .linklisten h3 {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgb(235, 222, 222);
+    margin-bottom: 0.25rem;
+}
+
+.beitragsliste article, .linklisten section {
+    margin-bottom: 3rem;
+}
+
+.beitragsinfo {
+    color: gray;
+}
