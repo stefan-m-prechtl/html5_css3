@@ -2,8 +2,9 @@
   Zentrales Stylesheet mit inlcudes; in Html-Seiten eingebunden
   ============================================================== */
 
-  @import url("basis.css");
-  @import url("layout.css");
-  @import url("navi-inline.css");
-  @import url("content.css");
-  @import url("formulare.css");
+@import url("basis.css");
+@import url("layout.css");
+@import url("layout-modern.css");
+@import url("navi-inline.css");
+@import url("content.css");
+@import url("formulare.css");
