@@ -1,0 +1,17 @@
+/* ==========================================================
+- Einstellungen für Ausdruck
+========================================================== */
+
+@media print {
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    html {
+        background-color: white;
+        color: black;
+    }
+    .site-header, .site-nav {
+        display: none;
+    }
+}

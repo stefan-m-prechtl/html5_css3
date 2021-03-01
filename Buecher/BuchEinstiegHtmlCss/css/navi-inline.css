@@ -5,6 +5,7 @@
 /* ---------------------------------------------------------
     Hauptnavigation
 ----------------------------------------------------------*/
+
 .site-nav ul {
     padding: 0;
     margin: 0;
@@ -21,6 +22,17 @@
 }
 
 /* Haupt-/Meta-Menü für aktuelle Seite markieren */
+
 .current a {
     text-decoration: underline;
+}
+
+.meta-nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.meta-nav li {
+    display: inline;
+    margin-right: 0.5rem;
 }
