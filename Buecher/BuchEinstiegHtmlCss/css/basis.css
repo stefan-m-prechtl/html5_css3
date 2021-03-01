@@ -90,3 +90,32 @@ address {
   margin: -1px;
   overflow: hidden;
 }
+
+/* ---------------------------------------------------------
+    Floating (Kapitel 21)
+----------------------------------------------------------*/
+
+.float-rechts {
+  float: right;
+  margin: 0 0 0 1rem;
+}
+
+.float-links {
+  float: left;
+  margin: 0 1rem 0 0;
+}
+
+.float-stop {
+  clear: both;
+}
+
+@supports (display: flow-root) {
+  .float-umschliessen {
+    display: flow-root;
+    overflow: initial;
+  }
+}
+
+figure[class~="float-rechts"], figure[class~="float-links"] {
+  text-align: center;
+}
