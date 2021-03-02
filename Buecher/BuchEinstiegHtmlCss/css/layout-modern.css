@@ -3,6 +3,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
     max-width: none;
     padding: 0;
     margin: 0;
@@ -18,4 +21,8 @@ body {
 .site-header, .site-nav, .site-content, .site-footer {
     padding-left: 0;
     padding-right: 0;
+}
+
+.site-content {
+    flex: 1;
 }
