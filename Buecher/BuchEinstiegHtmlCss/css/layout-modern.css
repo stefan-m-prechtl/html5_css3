@@ -18,6 +18,12 @@ body {
     margin: 0 auto;
 }
 
+@supports (display: grid) {
+    .inside {
+        max-width: 960px;
+    }
+}
+
 .site-header, .site-nav, .site-content, .site-footer {
     padding-left: 0;
     padding-right: 0;
