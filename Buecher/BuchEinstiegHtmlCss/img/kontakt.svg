@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg8"
+   sodipodi:docname="kontakt.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"><defs
+   id="defs12" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="732"
+   inkscape:window-height="480"
+   id="namedview10"
+   showgrid="false"
+   inkscape:zoom="0.735"
+   inkscape:cx="500"
+   inkscape:cy="500"
+   inkscape:window-x="62"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg8" />
+<metadata
+   id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
+     rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata>
+<g
+   id="g6"><path
+     d="M952.7,354.3h-6.3L595.2,52.5v104.6l85.3,73.2c16.9-5.6,37.6,0.3,48.7,14.8c7.6,9.9,10.2,22.3,8,34L861.6,386l-62,47.8L500,650.7L200.4,433.8L140.1,389l123.6-106.9c-1-3.7-1.6-7.3-1.6-11.1c0-9.4,3-18.3,8.7-25.8c11.6-15.3,33.2-21.2,51-14.2l0.7,0.3l82.4-71.3V54.6L56.2,354.3h-8.9c-5.6,0-10.1,4.4-10.1,9.9v615.8c0,5.5,4.5,9.9,10.1,9.9h905.4c5.6,0,10.1-4.4,10.1-9.9V364.2C962.8,358.7,958.3,354.3,952.7,354.3z M882.3,910.5H117.7v-438L494,745c3.5,2.6,8.4,2.6,11.9,0l376.3-272.5V910.5L882.3,910.5z M309.5,264.2l128.7,50.2V20.2c0-5.6,4.6-10.2,10.3-10.2h103.1c5.7,0,10.3,4.6,10.3,10.2v294.1l128.7-50.2c4.3-1.7,9.2-0.3,12,3.3c2.8,3.7,2.8,8.7-0.1,12.4L508.2,529.4c-2,2.5-5,4-8.2,4c-3.2,0-6.2-1.4-8.2-4L297.5,279.8c-1.4-1.8-2.2-4.1-2.2-6.2s0.7-4.3,2-6.2C300.2,263.9,305.1,262.5,309.5,264.2z"
+     id="path4" /></g>
+</svg>

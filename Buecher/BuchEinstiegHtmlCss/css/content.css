@@ -2,6 +2,7 @@
 - Einstellungen für den Inhaltsbereicht (<main>)
 ========================================================== */
 
+
 /* ---------------------------------------------------------
     Gestaltung der Links
 ----------------------------------------------------------*/
@@ -9,6 +10,7 @@
 .site-content a[href^="http"]::after {
     content: " \2197";
 }
+
 
 /* Reihenfolge wie hier einhalten! */
 
@@ -20,13 +22,15 @@
     color: #36abde;
 }
 
-.site-content a:hover, .site-content a:focus {
+.site-content a:hover,
+.site-content a:focus {
     color: #f5662e;
 }
 
 .site-content a:active {
     color: #d90000;
 }
+
 
 /* ---------------------------------------------------------
     Gestaltung der Infoboxen
@@ -53,6 +57,13 @@
     padding: 1rem;
     margin: 1rem 0;
 }
+
+.infobox img {
+    height: 5rem;
+    width: auto;
+    margin: 0 auto;
+}
+
 
 /* ---------------------------------------------------------
     Gestaltung der Kundenfeedbacks
@@ -85,6 +96,7 @@
     font-weight: bold;
 }
 
+
 /* ---------------------------------------------------------
     Gestaltung der News
 ----------------------------------------------------------*/
@@ -108,19 +120,22 @@
     }
 }
 
-.beitragsliste h3, .linklisten h3 {
+.beitragsliste h3,
+.linklisten h3 {
     padding-top: 0.5rem;
     border-top: 1px solid rgb(235, 222, 222);
     margin-bottom: 0.25rem;
 }
 
-.beitragsliste article, .linklisten section {
+.beitragsliste article,
+.linklisten section {
     margin-bottom: 3rem;
 }
 
 .beitragsinfo {
     color: gray;
 }
+
 
 /* ---------------------------------------------------------
     Gestaltung der Teamseite
