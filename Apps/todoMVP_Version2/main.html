@@ -23,6 +23,24 @@
     <link href="css/styles.css" rel="stylesheet" media="all">
 
     <!-- Skripte als Module einbinden -->
+    <!-- Organized Code with Modules
+    Native JavaScript modules are like ordinary JavaScript files with a few key differences. They should be loaded with the type="module" modifier. 
+    Some developers prefer to use the .mjs suffix to distinguish them from other JavaScript source, but that is not required. Modules are unique in a few ways:
+
+    By default, they are parsed and executed in “strict mode”
+    Modules can provide exports to be consumed by other modules
+    Modules can import variables, functions, and objects from child modules
+    Modules operate in their own scope and don’t have to be wrapped in immediately invoked function expressions
+
+    There are four steps in the lifecycle of a module.
+
+        First, the module is parsed and validated
+        Second, the module is loaded
+        Third, related modules are linked based on their imports and exports
+        Finally, modules are executed
+
+    Any code not wrapped in a function is executed immediately in step 4.
+    -->
     <script src="js/util.js" type="module"></script>
     <script src="js/taskModel.js" type="module"></script>
     <script src="js/taskListView.js" type="module"></script>
@@ -103,12 +121,10 @@
         </div>
     </main>
     <footer class="pagefooter">
-        <!-- The <address> element contains contact information for the nearest <article> or <body> element. This example is for the <body> -->
         <address>
             <p>Entwickler: <a href="mailto:stefanmprechtl@web.de">Stefan M. Prechtl</a>.</p>
             <p>Webentwicklung mit Html5, CSS, JS ES6</p>
-            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2016' is a date -->
-            <small>Copyright &copy; <time datetime="2016">2016</time>by esempe</small>
+            <small>Copyright &copy; <time datetime="2021">2021</time>by esempe</small>
         </address>
     </footer>
 </body>

@@ -1,17 +1,26 @@
 import Task from "./Task.js";
 
+/**
+ * Modellklasse vom MVP-Pattern
+ */
 export default class Model {
+  /**
+   * Konstruktor
+   */
   constructor() {
     this.reset();
   }
 
+  /**
+   * Modell in Initialzustand zurücksetzen
+   */
   reset() {
     this.listTasks = []
     this.currentTask = undefined
   }
 
   /**
-   * 
+   * Task mit der ID=id "umschalten" (Status umschalten)
    * @param {number} id 
    */
   toggleTask(id) {
@@ -21,6 +30,10 @@ export default class Model {
     task.toggleState();
   }
 
+  /**
+   * Task dem Modell hinzufügen
+   * @param {Task} task 
+   */
   addTask(task) {
     this.listTasks.push(task);
   }

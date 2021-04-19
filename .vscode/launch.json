@@ -26,6 +26,19 @@
                     "path": "${workspaceFolder}"
                 }
             ]
+        },
+        {
+            "name": "Launch todoMVP II",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://127.0.0.1:5500/Apps/todoMVP_Version2/main.html",
+            "pathMappings": [
+                {
+                    "url": "http://127.0.0.1:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
         }
     ]
 }

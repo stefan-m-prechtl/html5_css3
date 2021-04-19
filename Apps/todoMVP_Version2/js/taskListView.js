@@ -1,10 +1,12 @@
-import { $$ } from "./util.js";
-import Task from "./Task.js";
+import PresenterList from './taskListPresenter.js';
 
+/**
+ * View-Klasse für "Liste"
+ */
 export default class ViewList {
   /**
-   *
-   * @param {String} idRootElement
+   *Konstruktor
+   * @param {string} idRootElement Selektor für DOM-Element, das für den View als Root-Element verwendet wird
    */
   constructor(idRootElement) {
     this.rootElement = document.querySelector(idRootElement);
@@ -12,18 +14,25 @@ export default class ViewList {
   }
 
   /**
-   *
+   * Zugehörigen Presenter mit diesem View "verknüpfen"
    * @param {PresenterList} presenter
    */
   setPresenter(presenter) {
     this.presenter = presenter;
   }
 
-  // "Root"-Element des Views
-  $(element) {
-    return this.rootElement.querySelector(element);
+  /**
+     * DOM-Elememt im "View-Teilbaum" (ab View-Root) selektieren
+     * @param {string} selector Selektor für DOM-Selektion
+     * @returns {HTMLElement} Selektiertes HTML-Element
+     */
+  $(selector) {
+    return this.rootElement.querySelector(selector);
   }
 
+  /**
+   * Alle Events für diesen Views definieren
+   */
   initEventhandler() {
     // Gui-Elemente aus DOM holen (über Rootelement des Views!)
     const btnRefresh = this.$("#btnRefresh");
@@ -55,31 +64,43 @@ export default class ViewList {
     })
   }
 
+  /**
+   * Anzeige aller Tasks (inkl. Zähler) zurücksetzen 
+   */
   clearTasks() {
-    let counter = this.$("#counter")
-    counter.innerHTML = 0;
+    // Zähler rücksetzen
+    this.setCounter(0)
     // Ersten Tabellen-Body aus DOM holen und leeren
     let tablebody = this.$("table").tBodies[0];
     tablebody.innerHTML = "";
+
   }
 
   /**
-   *
+   * Zähler "Anzahl" mit übergebenen Wert anzeigen
+   * @param {number} value 
+   */
+  setCounter(value) {
+    // Zähler aktualisieren
+    let counter = this.$("#counter")
+    counter.innerHTML = value
+  }
+
+  /**
+   * Jede Task aus dem übergebenen Array darstellen
    * @param {Array} tasks
    */
   showTasks(tasks) {
 
+    // Alle Daten rücksetzen
+    this.clearTasks()
+
     // Zähler aktualisieren
-    let counter = this.$("#counter")
-    counter.innerHTML = tasks.length
-
-    // Ersten Tabellen-Body aus DOM holen und leeren
-    let tablebody = this.$("table").tBodies[0];
-    tablebody.innerHTML = "";
-
-    let rows = "";
+    this.setCounter(tasks.length)
 
     // Jede Task als Tabellenzeile anfügen
+    let rows = "";
+    let tablebody = this.$("table").tBodies[0];
     tasks.forEach((task) => {
       let template = this.$("#templateTableRow");
 
@@ -110,7 +131,7 @@ export default class ViewList {
   }
 
   /**
-   * 
+   * Anzeige für Task mit ID=id aktualisieren
    * @param {Number} id 
    */
   updateTask(id) {
