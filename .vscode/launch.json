@@ -1,15 +1,31 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "name": "Launch HelloWorldJson",
+            "type": "firefox",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://127.0.0.1:5500/Apps/todoMVP_Version2/main.html",
-            "webRoot": "${workspaceFolder}//Apps/todoMVP_Version2/"
+            "reAttach": true,
+            "url": "http://127.0.0.1:5500/Apps/HelloWorldJson/index.html",
+            "pathMappings": [
+                {
+                    "url": "http://127.0.0.1:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
+        },
+        {
+            "name": "Launch todoMVP",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://127.0.0.1:5500/Apps/todoMVP/main.html",
+            "pathMappings": [
+                {
+                    "url": "http://127.0.0.1:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
         }
     ]
 }

@@ -78,10 +78,12 @@ export default class ViewList {
     });
     body.innerHTML = rows;
 
-    // Eventhandler für alle Checkboxen
-    $$("[data-task-id]").addEventListener("click", (e) =>
-      this.presenter.toggleState(e.target.getAttribute("data-task-id"))
-    );
+    // Eventhandler für alle Checkboxen hinzufügen
+    let nodelist = $$("[data-task-id]")
+    nodelist.forEach(node =>
+      node.addEventListener("click", (e) =>
+        this.presenter.toggleState(e.target.getAttribute("data-task-id"))
+      ));
 
     // Setze Zähler neu
     this.setCounter(tasks.size);

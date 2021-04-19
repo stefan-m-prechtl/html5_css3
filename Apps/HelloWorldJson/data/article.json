@@ -1,16 +1,5 @@
-{
-    "articles": [
-        {
-            "number": "1234",
-            "description": "Tasse (klein)"
-        },
-        {
-            "number": "2345",
-            "description": "Tasse (normal)"
-        },
-        {
-            "number": "3456",
-            "description": "Tasse (groß)"
-        }
-    ]
-}
+[
+    { "number": "1234", "description": "Tasse (klein)" },
+    { "number": "2345", "description": "Tasse (normal)" },
+    { "number": "3456", "description": "Tasse (groß)"}
+]

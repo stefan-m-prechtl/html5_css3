@@ -35,15 +35,16 @@ function loadData() {
         .then(function (response) {
             return response.json();
         })
-        .then(result  => {
-            let table = initTable(['id','desc']);
+        .then(result => {
+            let table = initTable(['id', 'desc']);
             let articles = result.articles;
-            articles.forEach(article => {
+            //articles.forEach(article => {
+            result.forEach(article => {    
                 let row = createRow([article.number, article.description]);
                 table.tBodies[0].appendChild(row);
             });
             document.getElementById("jsondata").appendChild(table);
         })
-        .catch(error => console.error(error));
+        .catch(error => console.log(error));
 }
 
