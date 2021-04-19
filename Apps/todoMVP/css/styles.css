@@ -7,15 +7,19 @@
     }
     body {
         display: grid;
-        grid-template-rows: 1fr 5.85fr 1fr;
-        grid-template-columns: 33%;
+        grid-template-rows: 100%;
+        grid-template-columns: 50%;
         height: 100%;
         background: white;
         color: #333;
-        /* min-width: 300px;
-        max-width: 480px;*/
         font-family: 'Open Sans', Arial, sans-serif;
         font-size: 0.875rem;
+    }
+    main {
+        background-color: gray;
+    }
+    main h2 {
+        color: #fff;
     }
     .pageheader, .navmain, main, aside, .pagefooter {
         padding: 1em;
@@ -178,7 +182,7 @@
     }
     input[type="text"] {
         cursor: pointer;
-        width: 100%;
+        width: calc(100% - 1em);
     }
     select {
         cursor: pointer;
