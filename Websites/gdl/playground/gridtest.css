@@ -4,6 +4,7 @@ html {
 
 body {
     display: grid;
+    height: 95%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 1fr 97fr 1fr;
     grid-template-areas: "header header" "nav nav" "main aside" "footer footer"
