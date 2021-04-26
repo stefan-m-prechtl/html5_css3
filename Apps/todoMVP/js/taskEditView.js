@@ -51,6 +51,14 @@ export default class ViewEdit {
         });
     }
 
+    showTask(task) {
+
+        const descriptionField = this.$('#descTask');
+        descriptionField.value = task.description;
+        const priorityField = this.$('#prioTask');
+        priorityField.value = task.priority;
+    }
+
 
 
 }

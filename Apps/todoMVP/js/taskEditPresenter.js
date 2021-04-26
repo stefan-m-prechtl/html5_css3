@@ -38,4 +38,8 @@ export default class PresenterEdit {
         document.dispatchEvent(taskAddedEvent);
     }
 
+    showTask(task) {
+        this.view.showTask(task);
+    }
+
 }

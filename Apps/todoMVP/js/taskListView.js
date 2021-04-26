@@ -164,14 +164,16 @@ export default class ViewList {
    * @param {Number} rowIndex 
    */
   selectRow(rowIndex) {
+
+    // Alle Zeilen pauschal rücksetzen, aktuelle Zeile hervorheben
     let tablebody = this.$("table").tBodies[0];
     let rows = tablebody.querySelectorAll("tr");
     rows.forEach((row) => {
       row.classList.remove("selectedRow");
     });
-
     rows[rowIndex].classList.add("selectedRow");
 
+    this.presenter.selectedRow(rowIndex);
 
   }
 

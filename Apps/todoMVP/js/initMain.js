@@ -22,7 +22,12 @@ function init() {
   // Übergeordnete Events zum Austausch für beide Presenter
   document.addEventListener("taskAdded", () => {
     viewListPresenter.showAllTasks();
-  })
+  });
+
+  document.addEventListener("taskSelected", (event) => {
+    let task = event.detail.data;
+    viewEditPresenter.showTask(task);
+  });
 
 }
 

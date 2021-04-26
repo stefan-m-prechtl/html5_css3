@@ -12,6 +12,7 @@ export default class PresenterList {
     this.view = view;
     this.view.setPresenter(this);
     this.model = model;
+    this.tasklist = [];
 
   }
 
@@ -42,7 +43,8 @@ export default class PresenterList {
 
     // Modell & View aktualisieren
     this.model.listTasks = result;
-    this.view.showTasks(result)
+    this.tasklist = result;
+    this.view.showTasks(this.tasklist)
   }
 
   /**
@@ -67,23 +69,39 @@ export default class PresenterList {
    * Alle Tasks (ohne Filter) anzeigen
    */
   showAllTasks() {
-    let tasks = this.model.listTasks;
-    this.view.showTasks(tasks)
+    this.tasklist = this.model.listTasks;
+    this.view.showTasks(this.tasklist)
   }
 
   /**
    * Alle offenen Tasks anzeigen
    */
   showUndoneTasks() {
-    let undoneTaskArray = this.model.listTasks.filter((t) => t.done === false);
-    this.view.showTasks(undoneTaskArray);
+    this.tasklist = this.model.listTasks.filter((t) => t.done === false);
+    this.view.showTasks(this.tasklist);
   }
 
   /**
    * Alle erledigten Tasks anzeigen
    */
   showDoneTasks() {
-    let doneTaskArray = this.model.listTasks.filter((t) => t.done === true);
-    this.view.showTasks(doneTaskArray);
+    this.tasklist = this.model.listTasks.filter((t) => t.done === true);
+    this.view.showTasks(this.tasklist);
+  }
+
+  selectedRow(rowIndex) {
+    // Event für Edit-Presenter auslösen
+    var dict = {
+      index: "rowIndex"
+    };
+
+    let task = this.tasklist[rowIndex];
+
+    let taskSelectedEvent = new CustomEvent("taskSelected", {
+      detail: {
+        data: task
+      }
+    });
+    document.dispatchEvent(taskSelectedEvent);
   }
 }
