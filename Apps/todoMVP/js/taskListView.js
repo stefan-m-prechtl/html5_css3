@@ -99,12 +99,13 @@ export default class ViewList {
     this.setCounter(tasks.length)
 
     // Jede Task als Tabellenzeile anfügen
-    let rows = "";
     let tablebody = this.$("table").tBodies[0];
     tasks.forEach((task) => {
       let template = this.$("#templateTableRow");
 
+      // Neue Tabellezeille erstellen (aus HTML-Template) (Typ ist DocumentFragment)
       let tr = document.importNode(template.content, true);
+
       let cells = tr.querySelectorAll("td");
 
       let state = cells[0].firstChild;
@@ -116,6 +117,7 @@ export default class ViewList {
         state.setAttribute("checked", "");
         description.classList.add("done");
       }
+      // Event-Handler für Checkbox "Zustand"
       state.on("click", (event) => {
         // TaskId aus Attribut holen
         let elem = event.target
@@ -123,16 +125,25 @@ export default class ViewList {
         this.presenter.toggleTask(id);
       });
 
+
       description.textContent = task.description;
       priority.textContent = task.priority;
 
+      // Ergebnis von appendChild: hier DocumentFragment => Zeile als HtmlElement holen
       tablebody.appendChild(tr);
+      let row = tablebody.lastElementChild;
+
+      // Event-Handler für Zeile
+      row.on("click", event => {
+        this.selectRow(row.rowIndex - 1);
+      });
+
     });
   }
 
   /**
    * Anzeige für Task mit ID=id aktualisieren
-   * @param {Number} id 
+   * @param {Number} id
    */
   updateTask(id) {
 
@@ -146,6 +157,22 @@ export default class ViewList {
     } else {
       description.classList.remove("done");
     }
+  }
+
+  /**
+   * Zeile mit angegebenen Index selektieren und Task im Edit-View anzeigen
+   * @param {Number} rowIndex 
+   */
+  selectRow(rowIndex) {
+    let tablebody = this.$("table").tBodies[0];
+    let rows = tablebody.querySelectorAll("tr");
+    rows.forEach((row) => {
+      row.classList.remove("selectedRow");
+    });
+
+    rows[rowIndex].classList.add("selectedRow");
+
+
   }
 
 }
