@@ -24,6 +24,28 @@ document.addEventListener("DOMContentLoaded", init);
   */
 function init() {
 
+    startSlideShow(1);
+
+    // Slideshow
+    let btnPrevious = $('#slideShowPrevious');
+    let btnNext = $('#slideShowNext');
+
+    let currentSlide = 100;
+
+    btnPrevious.on("click", () => {
+        currentSlide += 1;
+        showSlide(currentSlide);
+    });
+
+    btnNext.on("click", () => {
+        currentSlide -= 1;
+        showSlide(currentSlide);
+    });
+
+
+    // Übersicht
+
+
     let sectionPicture = $('.site-content-pictures');
 
     for (let index = 1; index < 200; index++) {
@@ -49,6 +71,7 @@ function init() {
     let bntTwoColum = $('#twoColumn');
     let bntThreeColum = $('#threeColumn');
 
+
     bntOneColum.on("click", () => {
         sectionPicture.style['grid-template-columns'] = "repeat(1,auto)";
     });
@@ -63,4 +86,16 @@ function init() {
 
 }
 
+function showSlide(index) {
+    let imgSlideshow = $('#slideShowImage');
+    imgSlideshow.src = 'pic/image' + index + '.jpg';
+}
+
+function startSlideShow(index) {
+    showSlide(index);
+    let newIndex = index + 1;
+    if (newIndex < 50) {
+        setTimeout(startSlideShow, 500, newIndex);
+    }
+}
 

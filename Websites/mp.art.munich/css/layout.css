@@ -165,4 +165,14 @@ img {
    .site-content-pictures figure {
       max-width: 100%;
    }
+
+   /* Nested */
+   .site-content-slideshow figure {
+      max-width: 100%;
+      
+   }
 }
+
+}
+
+

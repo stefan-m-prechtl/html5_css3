@@ -26,6 +26,20 @@
                     "path": "${workspaceFolder}"
                 }
             ]
+        },
+        {
+            "name": "Launch MP.art.Munich",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://127.0.0.1:5500/Websites/mp.art.munich/index.html",
+            "pathMappings": [
+                {
+                    "url": "http://127.0.0.1:5500",
+                    "path": "${workspaceFolder}"
+                }
+            ]
         }
+
     ]
 }
