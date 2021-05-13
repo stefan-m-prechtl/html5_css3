@@ -1,91 +1,121 @@
 // JQuery like Selektoren
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
 // JQuery like Eventhandler
 Node.prototype.on = function (name, fn) {
-    this.addEventListener(name, fn);
-    return this;
-};
+  this.addEventListener(name, fn)
+  return this
+}
 NodeList.prototype.on = NodeList.prototype.on = function (name, fn) {
-    this.forEach((elem) => elem.on(name, fn));
-    return this;
-};
+  this.forEach((elem) => elem.on(name, fn))
+  return this
+}
 
 // Array-Methoden bereitstellen
-NodeList.prototype.__proto__ = Array.prototype;
-HTMLCollection.prototype.__proto__ = Array.prototype;
+NodeList.prototype.__proto__ = Array.prototype
+HTMLCollection.prototype.__proto__ = Array.prototype
 
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener('DOMContentLoaded', init)
 
 /*
  * Initialisierung:
-  */
+ */
 function init() {
+  let btnPrevious = $('#slideShowPrevious')
+  let btnNext = $('#slideShowNext')
 
-    startSlideShow(1);
+  let currentSlide = 100
 
-    // Slideshow
-    let btnPrevious = $('#slideShowPrevious');
-    let btnNext = $('#slideShowNext');
+  btnPrevious.on('click', () => {
+    currentSlide += 1
+    showSlide(currentSlide)
+  })
 
-    let currentSlide = 100;
+  btnNext.on('click', () => {
+    currentSlide -= 1
+    showSlide(currentSlide)
+  })
 
-    btnPrevious.on("click", () => {
-        currentSlide += 1;
-        showSlide(currentSlide);
-    });
+  // Übersicht
+  let sectionPicture = $('.site-content-pictures')
 
-    btnNext.on("click", () => {
-        currentSlide -= 1;
-        showSlide(currentSlide);
-    });
+  for (let index = 1; index < 200; index++) {
+    let figureElem = document.createElement('figure')
+    let imgElem = document.createElement('img')
+    let figcaptionElem = document.createElement('figcaption')
 
+    imgElem.alt = 'bild' + String(index)
+    imgElem.loading = 'lazy'
+    imgElem.src = 'pic/image' + String(index) + '.jpg'
 
-    // Übersicht
+    figcaptionElem.textContent = 'Bild' + String(index)
 
+    figureElem.appendChild(imgElem)
+    figureElem.appendChild(figcaptionElem)
+    figureElem.classList.add('use4slideshow')
 
-    let sectionPicture = $('.site-content-pictures');
+    sectionPicture.appendChild(figureElem)
+  }
 
-    for (let index = 1; index < 200; index++) {
+  let bntOneColum = $('#oneColumn')
+  let bntTwoColum = $('#twoColumn')
+  let bntThreeColum = $('#threeColumn')
 
-        let figureElem = document.createElement('figure');
-        let imgElem = document.createElement('img');
-        let figcaptionElem = document.createElement('figcaption');
+  bntOneColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(1,auto)'
+  })
 
-        imgElem.alt = 'bild' + String(index);
-        imgElem.loading = 'lazy';
-        imgElem.src = 'pic/image' + String(index) + '.jpg'
+  bntTwoColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(2,auto)'
+  })
 
-        figcaptionElem.textContent = 'Bild' + String(index);
-
-        figureElem.appendChild(imgElem);
-        figureElem.appendChild(figcaptionElem);
-        figureElem.classList.add('use4slideshow');
-
-        sectionPicture.appendChild(figureElem);
-    }
-
-    let bntOneColum = $('#oneColumn');
-    let bntTwoColum = $('#twoColumn');
-    let bntThreeColum = $('#threeColumn');
-
-
-    bntOneColum.on("click", () => {
-        sectionPicture.style['grid-template-columns'] = "repeat(1,auto)";
-    });
-
-    bntTwoColum.on("click", () => {
-        sectionPicture.style['grid-template-columns'] = "repeat(2,auto)";
-    });
-
-    bntThreeColum.on("click", () => {
-        sectionPicture.style['grid-template-columns'] = "repeat(3,auto)";
-    });
-
+  bntThreeColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(3,auto)'
+  })
 }
 
+function initOverview() {
+  // Übersicht
+  let sectionPicture = $('.site-content-pictures')
+
+  for (let index = 1; index < 200; index++) {
+    let figureElem = document.createElement('figure')
+    let imgElem = document.createElement('img')
+    let figcaptionElem = document.createElement('figcaption')
+
+    imgElem.alt = 'bild' + String(index)
+    imgElem.loading = 'lazy'
+    imgElem.src = 'pic/image' + String(index) + '.jpg'
+
+    figcaptionElem.textContent = 'Bild' + String(index)
+
+    figureElem.appendChild(imgElem)
+    figureElem.appendChild(figcaptionElem)
+    figureElem.classList.add('use4slideshow')
+
+    sectionPicture.appendChild(figureElem)
+  }
+
+  let bntOneColum = $('#oneColumn')
+  let bntTwoColum = $('#twoColumn')
+  let bntThreeColum = $('#threeColumn')
+
+  bntOneColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(1,auto)'
+  })
+
+  bntTwoColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(2,auto)'
+  })
+
+  bntThreeColum.on('click', () => {
+    sectionPicture.style['grid-template-columns'] = 'repeat(3,auto)'
+  })
+}
+
+/*
 function showSlide(index) {
     let imgSlideshow = $('#slideShowImage');
     imgSlideshow.src = 'pic/image' + index + '.jpg';
@@ -98,4 +128,4 @@ function startSlideShow(index) {
         setTimeout(startSlideShow, 500, newIndex);
     }
 }
-
+*/

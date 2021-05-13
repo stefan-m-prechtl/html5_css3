@@ -2,177 +2,183 @@
     Grid-Layout
 ----------------------------------------------------------*/
 
+
 /* zum Testen --> Hintergrundfarben setzen */
+
 body {
-   background-color: white;
-   color: black;
-   margin: 1rem auto;
+    background-color: white;
+    color: black;
+    margin: 1rem auto;
 }
 
 .site-header {
-   background-color: orange;
+    background-color: orange;
 }
 
 .site-nav {
-   background-color: aquamarine;
+    background-color: aquamarine;
 }
 
 .site-content {
-   background-color: white;
+    background-color: white;
 }
 
 .site-aside {
-   background-color: lightblue;
+    background-color: lightblue;
 }
 
 .site-footer {
-   background-color: grey;
+    background-color: grey;
 }
 
-/* Bilder */
+
+/* Bilder - Allgemein */
 figure {
-   border: 5px solid silver;
+border: 5px solid silver;
+    margin:px;
+    max-width: 100%;
 }
 
-img {
-   max-width: 100%;
-   height: auto;
-   padding: 5px;
+img { 
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
 }
+
+
+/* Bilder - Übersicht asl Grid: Default: 1-spaltig */
+.site-content-pictures {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+}
+
 
 /* ---------------------------------------------------------
     Grid-Layout
 ----------------------------------------------------------*/
 
+
 /* Handy */
+
 @media screen and (max-width: 39.938em) {
-   body {
-      display: grid;
-   }
-   .site-header {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-      grid-row-end: 2;
-   }
-   .site-nav {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 2;
-      grid-row-end: 3;
-   }
-   .site-content {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 3;
-      grid-row-end: 4;
-   }
-   .site-aside {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 4;
-      grid-row-end: 5;
-   }
-   .site-footer {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 5;
-      grid-row-end: 6;
-   }
+    body {
+        display: grid;
+    }
+    .site-header {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .site-nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .site-content {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .site-aside {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    .site-footer {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
 }
+
 
 /* Tablet */
+
 @media screen and (min-width: 40em) and (max-width: 63.938em) {
-   body {
-      display: grid;
-      grid-template-columns: 6.5fr 3.5fr;
-   }
-   .site-header {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 2;
-   }
-   .site-nav {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 3;
-   }
-   .site-content {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 3;
-      grid-row-end: 4;
-   }
-   .site-aside {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 3;
-      grid-row-end: 4;
-   }
-   .site-footer {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 4;
-      grid-row-end: 5;
-   }
+    body {
+        display: grid;
+        grid-template-columns: 6.5fr 3.5fr;
+    }
+    .site-header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .site-nav {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .site-content {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .site-aside {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .site-footer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
 }
+
 
 /* Desktop */
+
 @media screen and (min-width: 64em) {
-   body {
-      display: grid;
-      grid-template-columns: 1fr 6fr 2fr;
-   }
-
-   .site-header {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 2;
-   }
-   .site-nav {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 2;
-      grid-row-end: 3;
-   }
-   .site-content {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 3;
-   }
-   .site-aside {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 2;
-      grid-row-end: 3;
-   }
-   .site-footer {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 3;
-      grid-row-end: 4;
-   }
-
-   /* Nested */
-   .site-content-pictures {
-      display: grid;
-      grid-template-columns: repeat(1, auto);
-   }
-   .site-content-pictures figure {
-      max-width: 100%;
-   }
-
-   /* Nested */
-   .site-content-slideshow figure {
-      max-width: 100%;
-      
-   }
-}
-
+    body {
+        display: grid;
+        grid-template-columns: 1fr 6fr 2fr;
+    }
+    .site-header {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .site-nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .site-content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .site-aside {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .site-footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    /* Nested */
+    .site-content-slideshow figure {
+        max-width: 100%;
+    }
 }
 
 
+}

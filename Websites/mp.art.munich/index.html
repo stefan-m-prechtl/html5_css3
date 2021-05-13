@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <!-- id "top" als Springziel für "Navigations"-Link im Footer-->
 <html lang="de" id="top">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MP.art.Munich</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/w3.js"></script>
     <script src="js/app.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="site-header">
-        <h1>MP.art.Munich</h1>
+      <h1>MP.art.Munich</h1>
     </header>
-    <nav class="site-nav">Navigation</nav>
-    <main class="site-content">
+    <nav class="site-nav">
+      <ul>
+        <li>Übersicht</li>
+        <li>Diashow</li>
+        <li>Über mich</li>
+        <li>Impressum</li>
+      </ul>
+    </nav>
 
-        <section class="site-content-slideshow">
-            <button id="slideShowPrevious">&lt;</button>
-            <button id="slideShowNext">&gt;</button>
+    <main class="site-content">
+      <!--
+      <section class="site-content-slideshow">
+        <button id="slideShowPrevious">&lt;</button>
+        <button id="slideShowNext">&gt;</button>
             <figure>
                 <img id="slideShowImage" src="pic/image100.jpg" alt="Aktuelles Bild">
                 <figcaption>Aktuelles Bild</figcaption>
             </figure>
-
         </section>
-
+    -->
+      <div id="overview">
         <nav class="site-content-pictures-nav">
-            <button id="oneColumn">1-Spaltig</button>
-            <button id="twoColumn">2-Spaltig</button>
-            <button id="threeColumn">3-Spaltig</button>
+          <button id="oneColumn">1-Spaltig</button>
+          <button id="twoColumn">2-Spaltig</button>
+          <button id="threeColumn">3-Spaltig</button>
         </nav>
         <section class="site-content-pictures">
-            <!-- Bilder werden per Javascript geladen und hier eingefügt -->
+          <!-- Bilder werden per Javascript geladen und hier eingefügt -->
         </section>
-
-
+      </div>
     </main>
     <aside class="site-aside">Aside</aside>
     <footer class="site-footer">
-        <!-- Hyperlink zur ID "top" auf dieser Seite -->
-        <a href="#top">nach oben</a>
+      <!-- Hyperlink zur ID "top" auf dieser Seite -->
+      <a href="#top">nach oben</a>
     </footer>
-</body>
-
+  </body>
 </html>
