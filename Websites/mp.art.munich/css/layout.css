@@ -34,22 +34,36 @@ body {
 
 /* Bilder - Allgemein */
 figure {
-border: 5px solid silver;
-    margin:px;
+    position: relative;
+    border: 5px solid silver;
+    margin:3px;
     max-width: 100%;
 }
-
-img { 
+figure img { 
+    display: block;
     max-width: 100%;
     height: auto;
+    margin-bottom: 2rem;
     padding: 5px;
+}
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
 }
 
 
-/* Bilder - Übersicht asl Grid: Default: 1-spaltig */
+
+/* Bilder - Übersicht als Grid: Default: 1-spaltig */
 .site-content-pictures {
     display: grid;
     grid-template-columns: repeat(1, auto);
+    /* horizontale Zentrierung: align-items: center; */
+    
 }
 
 

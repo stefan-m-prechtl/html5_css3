@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', init)
  * Initialisierung:
  */
 function init() {
+  initOverview()
+  /*  
   let btnPrevious = $('#slideShowPrevious')
   let btnNext = $('#slideShowNext')
 
@@ -37,43 +39,7 @@ function init() {
     currentSlide -= 1
     showSlide(currentSlide)
   })
-
-  // Übersicht
-  let sectionPicture = $('.site-content-pictures')
-
-  for (let index = 1; index < 200; index++) {
-    let figureElem = document.createElement('figure')
-    let imgElem = document.createElement('img')
-    let figcaptionElem = document.createElement('figcaption')
-
-    imgElem.alt = 'bild' + String(index)
-    imgElem.loading = 'lazy'
-    imgElem.src = 'pic/image' + String(index) + '.jpg'
-
-    figcaptionElem.textContent = 'Bild' + String(index)
-
-    figureElem.appendChild(imgElem)
-    figureElem.appendChild(figcaptionElem)
-    figureElem.classList.add('use4slideshow')
-
-    sectionPicture.appendChild(figureElem)
-  }
-
-  let bntOneColum = $('#oneColumn')
-  let bntTwoColum = $('#twoColumn')
-  let bntThreeColum = $('#threeColumn')
-
-  bntOneColum.on('click', () => {
-    sectionPicture.style['grid-template-columns'] = 'repeat(1,auto)'
-  })
-
-  bntTwoColum.on('click', () => {
-    sectionPicture.style['grid-template-columns'] = 'repeat(2,auto)'
-  })
-
-  bntThreeColum.on('click', () => {
-    sectionPicture.style['grid-template-columns'] = 'repeat(3,auto)'
-  })
+  */
 }
 
 function initOverview() {

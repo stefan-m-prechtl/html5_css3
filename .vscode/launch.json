@@ -1,45 +1,44 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch HelloWorldJson",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://127.0.0.1:5500/Apps/HelloWorldJson/index.html",
+      "pathMappings": [
         {
-            "name": "Launch HelloWorldJson",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "url": "http://127.0.0.1:5500/Apps/HelloWorldJson/index.html",
-            "pathMappings": [
-                {
-                    "url": "http://127.0.0.1:5500",
-                    "path": "${workspaceFolder}"
-                }
-            ]
-        },
-        {
-            "name": "Launch todoMVP",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "url": "http://127.0.0.1:5500/Apps/todoMVP/main.html",
-            "pathMappings": [
-                {
-                    "url": "http://127.0.0.1:5500",
-                    "path": "${workspaceFolder}"
-                }
-            ]
-        },
-        {
-            "name": "Launch MP.art.Munich",
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "url": "http://127.0.0.1:5500/Websites/mp.art.munich/index.html",
-            "pathMappings": [
-                {
-                    "url": "http://127.0.0.1:5500",
-                    "path": "${workspaceFolder}"
-                }
-            ]
+          "url": "http://127.0.0.1:5500",
+          "path": "${workspaceFolder}"
         }
-
-    ]
+      ]
+    },
+    {
+      "name": "Launch todoMVP",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://127.0.0.1:5500/Apps/todoMVP/main.html",
+      "pathMappings": [
+        {
+          "url": "http://127.0.0.1:5500",
+          "path": "${workspaceFolder}"
+        }
+      ]
+    },
+    {
+      "name": "Launch MP.art.Munich",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://127.0.0.1:5500/Websites/mp.art.munich/index.html",
+      "pathMappings": [
+        {
+          "url": "http://127.0.0.1:5500",
+          "path": "${workspaceFolder}"
+        }
+      ]
+    }
+  ]
 }

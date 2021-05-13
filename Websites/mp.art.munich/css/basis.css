@@ -12,12 +12,12 @@
 *,
 *::before,
 *::after {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Sanftes Scrollen innerhalb einer Seite */
 html {
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* "Collapsing-Margins" unterbinden */
@@ -31,46 +31,52 @@ p,
 ul,
 ol,
 blockquote {
-   margin-top: 0;
+  margin-top: 0;
 }
 
 /* ---------------------------------------------------------
       Grundlegende Schrift-/Textgestaltung
   ----------------------------------------------------------*/
 
+/* für Browser mit 16pX Defaultgröße: 1rem = 1o pixel */
 html {
-   font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-   font-size: 1.6rem;
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-weight: 300;
+  font-size: 1.6rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 
 /* Überschriften */
 
 h1 {
-   font-size: 2.6rem;
+  font-size: 2.6rem;
 }
 
 h2 {
-   font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 h3 {
-   font-size: 2rem;
+  font-size: 2rem;
 }
 
 h4 {
-   font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 h5 {
-   font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h6 {
-   font-size: 1rem;
-   font-variant: small-caps;
+  font-size: 1rem;
+  font-variant: small-caps;
+}
+
+/* Bilder */
+figcaption {
+  font-size: 1.2rem;
 }
