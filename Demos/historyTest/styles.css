@@ -1,0 +1,13 @@
+#start {
+  background-color: lightblue;
+}
+
+#overview {
+  background-color: lightpink;
+  display: none;
+}
+
+#details {
+  background-color: green;
+  display: none;
+}
