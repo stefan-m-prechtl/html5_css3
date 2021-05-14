@@ -17,29 +17,14 @@ NodeList.prototype.__proto__ = Array.prototype
 HTMLCollection.prototype.__proto__ = Array.prototype
 
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
-document.addEventListener('DOMContentLoaded', init)
+document.addEventListener('DOMContentLoaded', init);
 
 /*
- * Initialisierung:
+ * Initialisierung der Übersicht: Bilder laden und anzeigen
  */
 function init() {
   initOverview()
-  /*  
-  let btnPrevious = $('#slideShowPrevious')
-  let btnNext = $('#slideShowNext')
 
-  let currentSlide = 100
-
-  btnPrevious.on('click', () => {
-    currentSlide += 1
-    showSlide(currentSlide)
-  })
-
-  btnNext.on('click', () => {
-    currentSlide -= 1
-    showSlide(currentSlide)
-  })
-  */
 }
 
 function initOverview() {
@@ -80,6 +65,10 @@ function initOverview() {
     sectionPicture.style['grid-template-columns'] = 'repeat(3,auto)'
   })
 }
+
+
+
+
 
 /*
 function showSlide(index) {

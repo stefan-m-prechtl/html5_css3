@@ -1,198 +1,234 @@
 /* ---------------------------------------------------------
-    Grid-Layout
+    - Responsive Grid-Layout
+    - Responsive Navigation
 ----------------------------------------------------------*/
 
+/* ---------------------------------------------------------
+    Allgemeine Einstellungen 
+----------------------------------------------------------*/
 
-/* zum Testen --> Hintergrundfarben setzen */
-
+/* Farben */
 body {
-    background-color: white;
-    color: black;
-    margin: 1rem auto;
+   background-color: white;
+   color: black;
+   margin: 0rem auto;
 }
 
 .site-header {
-    background-color: orange;
+   background-color: #b3d9ff;
+   color: #004080;
 }
 
 .site-nav {
-    background-color: aquamarine;
+   background-color: #80bfff;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
 }
 
 .site-content {
-    background-color: white;
+   background-color: white;
 }
 
 .site-aside {
-    background-color: lightblue;
+   background-color: lightblue;
 }
 
 .site-footer {
-    background-color: grey;
+   background-color: grey;
 }
 
+/* Navigation */
+.site-nav ul {
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+}
+.site-nav a {
+   display: block;
+   padding-left: 1rem;
+   text-decoration: none;
+   color: #005580;
+}
+
+.site-nav a:link {
+   color: #005580;
+}
+
+.site-content a:visited {
+   color: #005580;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+   background: #0b74b8;
+   color: white;
+}
+
+.current a {
+   background: #002966;
+   color: white;
+}
+
+/* Single Page Application */
+.hideDiv {
+   display: none;
+}
 
 /* Bilder - Allgemein */
 figure {
-    position: relative;
-    border: 5px solid silver;
-    margin:3px;
-    max-width: 100%;
+   position: relative;
+   border: 5px solid silver;
+   margin: 3px;
+   max-width: 100%;
 }
-figure img { 
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
-    padding: 5px;
+figure img {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   margin-bottom: 2rem;
+   padding: 5px;
 }
 figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
 
-    background: rgba(0, 0, 0, 0.5);
-    color: #FFF;
+   background: rgba(0, 0, 0, 0.5);
+   color: #fff;
 }
-
-
 
 /* Bilder - Übersicht als Grid: Default: 1-spaltig */
 .site-content-pictures {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    /* horizontale Zentrierung: align-items: center; */
-    
+   display: grid;
+   grid-template-columns: repeat(1, auto);
+   /* horizontale Zentrierung: align-items: center; */
 }
-
 
 /* ---------------------------------------------------------
     Grid-Layout
 ----------------------------------------------------------*/
 
-
 /* Handy */
-
 @media screen and (max-width: 39.938em) {
-    body {
-        display: grid;
-    }
-    .site-header {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .site-nav {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .site-content {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-    .site-aside {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 4;
-        grid-row-end: 5;
-    }
-    .site-footer {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 5;
-        grid-row-end: 6;
-    }
-}
+   body {
+      display: grid;
+   }
+   .site-header {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+   }
+   .site-nav {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+   .site-content {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+   }
+   .site-aside {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 4;
+      grid-row-end: 5;
+   }
+   .site-footer {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 5;
+      grid-row-end: 6;
+   }
 
+   .site-header h1 {
+      padding-left: 100px;
+      padding-top: 15px;
+   }
+}
 
 /* Tablet */
 
 @media screen and (min-width: 40em) and (max-width: 63.938em) {
-    body {
-        display: grid;
-        grid-template-columns: 6.5fr 3.5fr;
-    }
-    .site-header {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .site-nav {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .site-content {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-    .site-aside {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-    .site-footer {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 4;
-        grid-row-end: 5;
-    }
+   body {
+      display: grid;
+      grid-template-columns: 6.5fr 3.5fr;
+   }
+   .site-header {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+   }
+   .site-nav {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+   .site-content {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+   }
+   .site-aside {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+   }
+   .site-footer {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+   }
 }
-
 
 /* Desktop */
 
 @media screen and (min-width: 64em) {
-    body {
-        display: grid;
-        grid-template-columns: 1fr 6fr 2fr;
-    }
-    .site-header {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .site-nav {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .site-content {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .site-aside {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .site-footer {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        grid-row-start: 3;
-        grid-row-end: 4;
-    }
-    /* Nested */
-    .site-content-slideshow figure {
-        max-width: 100%;
-    }
-}
-
-
+   body {
+      display: grid;
+      grid-template-columns: 1fr 6fr 2fr;
+   }
+   .site-header {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+   }
+   .site-nav {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+   .site-content {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+   .site-aside {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 3;
+   }
+   .site-footer {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+   }
+   /* Nested */
+   .site-content-slideshow figure {
+      max-width: 100%;
+   }
 }

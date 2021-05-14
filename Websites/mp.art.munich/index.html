@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <!-- id "top" als Springziel für "Navigations"-Link im Footer-->
 <html lang="de" id="top">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MP.art.Munich</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/w3.js"></script>
-    <script src="js/app.js" type="module"></script>
-  </head>
 
-  <body>
-    <header class="site-header">
-      <h1>MP.art.Munich</h1>
-    </header>
-    <nav class="site-nav">
-      <ul>
-        <li>Übersicht</li>
-        <li>Diashow</li>
-        <li>Über mich</li>
-        <li>Impressum</li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP.art.Munich</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/w3.js"></script>
+  <script src="js/app.js" type="module"></script>
+</head>
 
-    <main class="site-content">
-      <!--
+<body>
+  <header class="site-header">
+    <h1>MP.art.Munich</h1>
+  </header>
+  <nav class="site-nav">
+    <ul>
+      <li class="current"><a href="/start">Start</a></li>
+      <li><a href="/overview">Übersicht</a></li>
+      <li><a href="/galery">Galerie</a></li>
+      <li><a href="/vita">Vita</a></li>
+      <li><a href="/contact">Kontakt</a></li>
+      <li><a href="/impressum">Impressum</a></li>
+    </ul>
+  </nav>
+
+  <main class="site-content">
+    <!--
       <section class="site-content-slideshow">
         <button id="slideShowPrevious">&lt;</button>
         <button id="slideShowNext">&gt;</button>
@@ -35,21 +38,64 @@
             </figure>
         </section>
     -->
-      <div id="overview">
-        <nav class="site-content-pictures-nav">
-          <button id="oneColumn">1-Spaltig</button>
-          <button id="twoColumn">2-Spaltig</button>
-          <button id="threeColumn">3-Spaltig</button>
-        </nav>
-        <section class="site-content-pictures">
-          <!-- Bilder werden per Javascript geladen und hier eingefügt -->
-        </section>
-      </div>
-    </main>
-    <aside class="site-aside">Aside</aside>
-    <footer class="site-footer">
-      <!-- Hyperlink zur ID "top" auf dieser Seite -->
-      <a href="#top">nach oben</a>
-    </footer>
-  </body>
+    <div id="start">
+      <header>
+        <h1>Startseite</h1>
+        <article>
+          <p>Willkommen auf meiner privaten Website auf der in meine Bilder für Freunde veröffentliche.</p>
+        </article>
+      </header>
+
+
+    </div>
+    <div id="overview" class="hideDiv">
+      <nav class="site-content-pictures-nav">
+        <button id="oneColumn">1-Spaltig</button>
+        <button id="twoColumn">2-Spaltig</button>
+        <button id="threeColumn">3-Spaltig</button>
+      </nav>
+      <section class="site-content-pictures">
+        <!-- Bilder werden per Javascript geladen und hier eingefügt -->
+      </section>
+    </div>
+
+    <div id="galery" class="hideDiv">
+      <header>
+        <h1>Galerie</h1>
+      </header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque accusamus, minus debitis tempore
+        inventore obcaecati quos ad tempora, iste aut esse nobis nisi accusantium facere, quam corporis ullam odio!
+      </p>
+    </div>
+
+    <div id="vita" class="hideDiv">
+      <header>
+        <h1>Vita</h1>
+      </header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque accusamus, minus debitis tempore
+        inventore obcaecati quos ad tempora, iste aut esse nobis nisi accusantium facere, quam corporis ullam odio!
+      </p>
+    </div>
+
+    <div id="impressum" class="hideDiv">
+      <header>
+        <h1>Impressum</h1>
+      </header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet atque accusamus, minus debitis tempore
+        inventore obcaecati quos ad tempora, iste aut esse nobis nisi accusantium facere, quam corporis ullam odio!
+      </p>
+    </div>
+  </main>
+
+  <aside class="site-aside">Aside</aside>
+
+  <footer class="site-footer">
+    <!-- Hyperlink zur ID "top" auf dieser Seite -->
+    <a href="#top">nach oben</a>
+  </footer>
+</body>
+
 </html>
