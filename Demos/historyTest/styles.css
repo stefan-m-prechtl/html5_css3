@@ -1,13 +1,15 @@
 #start {
-  background-color: lightblue;
+   background-color: lightblue;
 }
 
 #overview {
-  background-color: lightpink;
-  display: none;
+   background-color: lightpink;
 }
 
 #details {
-  background-color: green;
-  display: none;
+   background-color: green;
+}
+
+.hideDiv {
+   display: none;
 }

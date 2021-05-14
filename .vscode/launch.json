@@ -2,11 +2,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch HelloWorldJson",
+      "name": "Launch Current",
       "type": "firefox",
       "request": "launch",
       "reAttach": true,
-      "url": "http://127.0.0.1:5500/Apps/HelloWorldJson/index.html",
+      "url": "http://127.0.0.1:5500/Demos/historyTest/index.html",
       "pathMappings": [
         {
           "url": "http://127.0.0.1:5500",
