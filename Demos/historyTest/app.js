@@ -19,27 +19,23 @@ HTMLCollection.prototype.__proto__ = Array.prototype
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
 document.addEventListener('DOMContentLoaded', init)
 
-window.addEventListener('onpageshow', (event) => {
-  console.log(event);
-  console.log('onpageshow');
-
-});
+const originHref = window.location.href;
 
 /*
  * Initialisierung:
  */
 function init() {
 
-  const state = { 'pageName': 'start' }
-  history.replaceState(
-    state,
-    'Start',
-    '/start'
-  )
   window.addEventListener('popstate', (event) => {
-    showDiv(event.state.pageName);
-
+    showDiv(window.location.pathname);
   });
+
+
+  history.replaceState(
+    {},
+    'Start',
+    window.location.origin + '/start'
+  )
 
   initNavigation();
 
@@ -65,19 +61,19 @@ function initNavigation() {
 }
 
 function handleNavClick(e) {
-  let pageName = e.target.getAttribute('href').split('/').pop();
-  const state = { 'pageName': pageName }
-  history.pushState(
-    state,
-    pageName,
-    e.target.href
-  )
 
-  showDiv(pageName);
+  let pathName = e.target.getAttribute('href');
+  let pageName = e.target.getAttribute('href').split('/').pop();
+  history.pushState(
+    {},
+    pageName,
+    window.location.origin + pathName
+  )
+  showDiv(window.location.pathname);
   return e.preventDefault();
 }
 
-function showDiv(pageName) {
+function showDiv(pathName) {
 
   let divStart = $('#start')
   let divOverview = $('#overview')
@@ -88,15 +84,15 @@ function showDiv(pageName) {
   divOverview.classList.add('hideDiv');
   divDetails.classList.add('hideDiv');
 
-  if (pageName === "start") {
+  if (pathName === "/start") {
     divStart.classList.remove('hideDiv');
   }
 
-  if (pageName === "overview") {
+  if (pathName === "/overview") {
     divOverview.classList.remove('hideDiv');
   }
 
-  if (pageName === "details") {
+  if (pathName === "/details") {
     divDetails.classList.remove('hideDiv');
   }
 
