@@ -19,15 +19,46 @@ HTMLCollection.prototype.__proto__ = Array.prototype
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
 document.addEventListener('DOMContentLoaded', init);
 
+
+// "Basis"-URL (d.h. ohne queryString mit Seitenangabe) für Routing speichern
+const originHref = window.location.origin + window.location.pathname;
+
 /*
  * Initialisierung der Übersicht: Bilder laden und anzeigen
  */
 function init() {
-  initOverview()
+
+  initRouting();
+  initNavigation();
+  initOverview();
+
+  selectPage(window.location.search);
 
 }
 
+
+function initRouting() {
+
+  // Event wird ausgelöst durch Browser "Eine Seite zurück"/"Eine Seite vor"
+  window.addEventListener('popstate', (event) => {
+    let pageName = window.location.search.split('=').pop()
+    showPage(pageName);
+  });
+}
+
+function initNavigation() {
+
+  let navigationLinks = $$(".nav_link");
+  navigationLinks.forEach(link => {
+    link.on("click", (e) => {
+      handleNavClick(e);
+    });
+  });
+}
+
 function initOverview() {
+
+
   // Übersicht
   let sectionPicture = $('.site-content-pictures')
 
@@ -66,8 +97,46 @@ function initOverview() {
   })
 }
 
+function selectPage(search) {
+  if (!search) {
+    history.replaceState(
+      {},
+      'Start',
+      originHref + '?page=start'
+    )
+  }
+  else {
+    let pageName = window.location.search.split('=').pop()
+    showPage(pageName);
+  }
+}
+
+function handleNavClick(e) {
 
 
+  let pageName = e.target.getAttribute('href');
+  history.pushState(
+    {},
+    pageName,
+    originHref + '?page=' + pageName
+  )
+  showPage(pageName);
+  return e.preventDefault();
+}
+
+function showPage(pageName) {
+
+  let virtualPages = $$(".virtualpage");
+  virtualPages.forEach(page => page.classList.add('hideDiv'));
+
+  let selector = '[href=\'' + pageName + '\']';
+  let navLink = $(selector);
+  navLink.focus();
+
+  let currentPage = $('#' + pageName);
+  currentPage.classList.remove('hideDiv');
+
+}
 
 
 /*

@@ -38,6 +38,10 @@ body {
 }
 
 /* Navigation */
+.current a {
+   background: #002966;
+   color: white !important;
+}
 .site-nav ul {
    padding: 0;
    margin: 0;
@@ -64,9 +68,8 @@ body {
    color: white;
 }
 
-.current a {
-   background: #002966;
-   color: white;
+.site-nav a:active {
+   color: red;
 }
 
 /* Single Page Application */
