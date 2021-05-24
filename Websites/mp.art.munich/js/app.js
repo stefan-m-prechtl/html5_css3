@@ -16,6 +16,11 @@ NodeList.prototype.on = NodeList.prototype.on = function (name, fn) {
 NodeList.prototype.__proto__ = Array.prototype
 HTMLCollection.prototype.__proto__ = Array.prototype
 
+// Zufallszahl von/bis
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
 document.addEventListener('DOMContentLoaded', init);
 
@@ -31,11 +36,11 @@ function init() {
   initRouting();
   initNavigation();
   initOverview();
+  initGalery(randomNumber(1, 199));
 
   selectPage(window.location.search);
 
 }
-
 
 function initRouting() {
 
@@ -57,7 +62,6 @@ function initNavigation() {
 }
 
 function initOverview() {
-
 
   // Übersicht
   let sectionPicture = $('.site-content-pictures')
@@ -97,6 +101,34 @@ function initOverview() {
   })
 }
 
+function initGalery(imgID) {
+  let buttonNext = $('#slideShowNext')
+  let buttonPrevious = $('#slideShowPrevious')
+
+  buttonNext.on('click', () => {
+    let figureElem = $('#slideShowFigure');
+    let currentImageId = parseInt(figureElem.getAttribute('data-img-id'));
+    showPicture(currentImageId + 1);
+  });
+
+  buttonPrevious.on('click', () => {
+    let figureElem = $('#slideShowFigure');
+    let currentImageId = parseInt(figureElem.getAttribute('data-img-id'));
+    showPicture(currentImageId - 1);
+  });
+
+  showPicture(imgID);
+}
+
+function showPicture(imgID) {
+  let figureElem = $('#slideShowFigure');
+  figureElem.setAttribute('data-img-id', imgID);
+  let img = figureElem.firstElementChild;
+  console.log(`pic/image${imgID}.jpg`);
+  img.src = `pic/image${imgID}.jpg`;
+}
+
+
 function selectPage(search) {
   if (!search) {
     history.replaceState(
@@ -112,7 +144,6 @@ function selectPage(search) {
 }
 
 function handleNavClick(e) {
-
 
   let pageName = e.target.getAttribute('href');
   history.pushState(
