@@ -7,7 +7,8 @@
     Allgemeine Einstellungen 
 ----------------------------------------------------------*/
 
-/* Farben */
+/* Farben, Abstände */
+
 body {
   background-color: white;
   color: black;
@@ -17,6 +18,8 @@ body {
 .site-header {
   background-color: #b3d9ff;
   color: #004080;
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
 .site-nav {
@@ -39,18 +42,17 @@ body {
 }
 
 /* Navigation */
+
 .current a {
   background: #002966;
   color: white !important;
 }
+
 .site-nav ul {
-  padding: 0;
-  margin: 0;
   list-style-type: none;
 }
+
 .site-nav a {
-  display: block;
-  padding-left: 1rem;
   text-decoration: none;
   color: #005580;
 }
@@ -63,8 +65,7 @@ body {
   color: #005580;
 }
 
-.site-nav a:hover,
-.site-nav a:focus {
+.site-nav a:hover, .site-nav a:focus {
   background: #0b74b8;
   color: white;
 }
@@ -74,17 +75,20 @@ body {
 }
 
 /* Single Page Application */
+
 .hideDiv {
   display: none;
 }
 
 /* Bilder - Allgemein */
+
 figure {
   position: relative;
   border: 5px solid silver;
   margin: 3px;
   max-width: 100%;
 }
+
 figure img {
   display: block;
   max-width: 100%;
@@ -92,29 +96,30 @@ figure img {
   margin-bottom: 2rem;
   padding: 5px;
 }
+
 figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
 /* Bilder - Übersicht als Grid: Default: 1-spaltig */
+
 .site-content-pictures {
   display: grid;
   grid-template-columns: repeat(1, auto);
   /* horizontale Zentrierung: align-items: center; */
 }
 
-
 /* ---------------------------------------------------------
     Grid-Layout
 ----------------------------------------------------------*/
 
 /* Handy */
+
 @media screen and (max-width: 39.938em) {
   body {
     display: grid;
@@ -151,10 +156,14 @@ figcaption {
     grid-row-start: 5;
     grid-row-end: 6;
   }
-
-  .site-header h1 {
-    padding-left: 100px;
-    padding-top: 15px;
+  /* Navigation - Handy */
+  .site-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  .site-nav a {
+    display: block;
+    padding-left: 1rem;
   }
 }
 
@@ -196,6 +205,18 @@ figcaption {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+  }
+  /* Navigation - Tablet */
+  .site-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  .site-nav li {
+    display: inline;
+  }
+  .site-nav a {
+    display: inline;
+    padding: 1rem;
   }
 }
 
@@ -241,5 +262,14 @@ figcaption {
   /* Nested */
   .site-content-slideshow figure {
     max-width: 100%;
+  }
+  /* Navigation - Desktop */
+  .site-nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  .site-nav a {
+    display: block;
+    padding-left: 1rem;
   }
 }
