@@ -54,6 +54,11 @@ function initRouting() {
 
 function initNavigation() {
 
+  let navigationButton = $('#nav_button');
+  navigationButton.on('click', (e) => {
+    handleNavButtonClick(e);
+  })
+
   let navigationLinks = $$(".nav_link");
   navigationLinks.forEach(link => {
     link.on("click", (e) => {
@@ -148,6 +153,19 @@ function selectPage(search) {
   else {
     let pageName = window.location.search.split('=').pop()
     showPage(pageName);
+  }
+}
+
+function handleNavButtonClick(e) {
+  let ulElem = $(".site-nav ul")
+  let displayStyle = ulElem.style['display'];
+  if (displayStyle === 'block') {
+    ulElem.style['display'] = 'none';
+    e.target.innerHTML = '&#9776; Menü';
+  }
+  else {
+    ulElem.style['display'] = 'block';
+    e.target.innerHTML = '&#x2716; Menü';
   }
 }
 

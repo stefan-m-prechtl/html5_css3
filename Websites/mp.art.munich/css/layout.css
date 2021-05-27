@@ -114,6 +114,20 @@ figcaption {
   /* horizontale Zentrierung: align-items: center; */
 }
 
+/* Bild in Galerie */
+
+#slideShowImage {
+  max-height: 70vh;
+  width: auto;
+}
+
+.site-content-pictures-nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-column-gap: 4rem;
+  justify-content: center;
+}
+
 /* ---------------------------------------------------------
     Grid-Layout
 ----------------------------------------------------------*/
@@ -157,7 +171,16 @@ figcaption {
     grid-row-end: 6;
   }
   /* Navigation - Handy */
+  #nav_button {
+    cursor: pointer;
+    background: inherit;
+    color: white;
+    border: 0;
+    padding-left: 10px;
+    ;
+  }
   .site-nav ul {
+    display: none;
     padding: 0;
     margin: 0;
   }
@@ -207,7 +230,11 @@ figcaption {
     grid-row-end: 5;
   }
   /* Navigation - Tablet */
+  #nav_button {
+    display: none !important;
+  }
   .site-nav ul {
+    display: block;
     padding: 0;
     margin: 0;
   }
@@ -259,12 +286,12 @@ figcaption {
     grid-row-start: 3;
     grid-row-end: 4;
   }
-  #slideShowImage {
-    max-height: 70vh;
-    width: auto;
-  }
   /* Navigation - Desktop */
+  #nav_button {
+    display: none !important;
+  }
   .site-nav ul {
+    display: block;
     padding: 0;
     margin: 0;
   }
