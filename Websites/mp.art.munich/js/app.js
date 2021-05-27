@@ -37,7 +37,7 @@ function init() {
   initNavigation();
   initOverview();
   //initGalery(randomNumber(1, 199));
-  initGalery(1);
+  initGalery(2);
 
   selectPage(window.location.search);
 
@@ -118,15 +118,22 @@ function initGalery(imgID) {
     showPicture(currentImageId - 1);
   });
 
-  showPicture(imgID);
+  //showPicture(imgID);
 }
 
 function showPicture(imgID) {
   let figureElem = $('#slideShowFigure');
   figureElem.setAttribute('data-img-id', imgID);
   let img = figureElem.firstElementChild;
-  console.log(`pic/image${imgID}.jpg`);
+
+  let top = figureElem.getBoundingClientRect().top;
+  let imgHeigth = window.innerHeight - top - 70;
+  console.log('img Höhe: ' + imgHeigth);
+  img.style['max-height'] = imgHeigth + 'px'
+  img.style['width'] = 'auto';
+
   img.src = `pic/image${imgID}.jpg`;
+
 }
 
 

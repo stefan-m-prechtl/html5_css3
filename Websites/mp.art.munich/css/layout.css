@@ -259,6 +259,10 @@ figcaption {
     grid-row-start: 3;
     grid-row-end: 4;
   }
+  #slideShowImage {
+    max-height: 70vh;
+    width: auto;
+  }
   /* Navigation - Desktop */
   .site-nav ul {
     padding: 0;
