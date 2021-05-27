@@ -36,7 +36,8 @@ function init() {
   initRouting();
   initNavigation();
   initOverview();
-  initGalery(randomNumber(1, 199));
+  //initGalery(randomNumber(1, 199));
+  initGalery(1);
 
   selectPage(window.location.search);
 
