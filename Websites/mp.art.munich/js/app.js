@@ -105,6 +105,26 @@ function initOverview() {
   bntThreeColum.on('click', () => {
     sectionPicture.style['grid-template-columns'] = 'repeat(3,auto)'
   })
+
+  // Doppelklick auf ein Bild 
+  let figureElements = $$('.use4slideshow')
+  figureElements.forEach(figureElem => {
+    figureElem.on('dblclick', (e) => {
+      handleDblClickOnOverviewPic(e);
+    })
+
+  });
+}
+
+function handleDblClickOnOverviewPic(e) {
+
+  let elem = e.target;
+  console.log(elem);
+  if (elem === HTMLImageElement) {
+    let src = elem.getAttribute('src')
+    console.log(src);
+
+  }
 }
 
 function initGalery(imgID) {
@@ -123,7 +143,7 @@ function initGalery(imgID) {
     showPicture(currentImageId - 1);
   });
 
-  //showPicture(imgID);
+  showPicture(imgID);
 }
 
 function showPicture(imgID) {
@@ -194,19 +214,3 @@ function showPage(pageName) {
   currentPage.classList.remove('hideDiv');
 
 }
-
-
-/*
-function showSlide(index) {
-    let imgSlideshow = $('#slideShowImage');
-    imgSlideshow.src = 'pic/image' + index + '.jpg';
-}
-
-function startSlideShow(index) {
-    showSlide(index);
-    let newIndex = index + 1;
-    if (newIndex < 50) {
-        setTimeout(startSlideShow, 500, newIndex);
-    }
-}
-*/
