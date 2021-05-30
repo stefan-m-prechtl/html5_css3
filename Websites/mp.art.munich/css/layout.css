@@ -48,6 +48,7 @@ body {
 
 .site-aside {
   background-color: var(--AsideBackgroundColor);
+  padding: 1rem;
 }
 
 .site-footer {
@@ -56,11 +57,6 @@ body {
 }
 
 /* Navigation */
-
-.current a {
-  background: #002966;
-  color: white !important;
-}
 
 .site-nav ul {
   list-style-type: none;
@@ -80,7 +76,7 @@ body {
   color: #005580;
 }
 
-.site-nav a:hover, .site-nav a:focus {
+.site-nav a:focus {
   background: #0b74b8;
   color: white;
 }

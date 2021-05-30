@@ -212,5 +212,7 @@ function showPage(pageName) {
 
   let currentPage = $('#' + pageName);
   currentPage.classList.remove('hideDiv');
+  let currentAside = $('#' + pageName + '-aside');
+  currentAside.classList.remove('hideDiv');
 
 }
