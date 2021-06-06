@@ -24,7 +24,6 @@ function randomNumber(min, max) {
 // Event-Listener: Event feuert, wenn DOM-Baum vollständig geladen ist
 document.addEventListener('DOMContentLoaded', init);
 
-
 // "Basis"-URL (d.h. ohne queryString mit Seitenangabe) für Routing speichern
 const originHref = window.location.origin + window.location.pathname;
 
@@ -41,7 +40,36 @@ function init() {
 
   selectPage(window.location.search);
 
+  window.addEventListener('resize', reportWindowSize);
+
 }
+
+function gcd(a, b) {
+  return (b == 0) ? a : gcd(b, a % b);
+}
+
+function reportWindowSize() {
+  let elem = $('#sizeinfo')
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+
+  let txt = '';
+
+  let r = gcd(w, h);
+  let a = (w / r) + ":" + (h / r);
+
+  let wAsEM = w / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
+
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    txt = 'aspect: ' + a + ', width (em)=' + wAsEM + ', height (px)=' + h + ', portrait';
+  }
+
+  if (window.matchMedia("(orientation: landscape)").matches) {
+    txt = 'aspect: ' + a + ', width (em)=' + wAsEM + ', height (px)=' + h + ', landscape';
+  }
+  elem.innerHTML = txt;
+}
+
 
 function initRouting() {
 

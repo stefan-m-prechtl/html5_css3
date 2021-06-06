@@ -336,7 +336,7 @@ figcaption {
 
 /* Desktop  - sehr breit*/
 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 90em) {
   body {
     /* Links und rechts einrücken */
     margin: 0 5em;
