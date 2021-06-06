@@ -141,16 +141,30 @@ function initOverview() {
       handleDblClickOnOverviewPic(e);
     })
 
+    // Modaldialog "Close"  
+    let close = $('.close');
+    close.on('click', () => {
+      let modal = $('#modal');
+      modal.classList.add('hideDiv');
+    })
+
   });
 }
 
 function handleDblClickOnOverviewPic(e) {
 
   let elem = e.target;
-  console.log(elem);
-  if (elem === HTMLImageElement) {
+  if (elem.nodeName === 'IMG') {
     let src = elem.getAttribute('src')
-    console.log(src);
+    let alt = elem.getAttribute('alt')
+
+    let modalDiv = $('#modal');
+    modalDiv.classList.remove('hideDiv');
+
+    let img = $('#modalImage');
+    img.src = src;
+    let caption = $('#modalFigcaption');
+    caption.textContent = alt;
 
   }
 }
