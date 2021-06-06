@@ -190,7 +190,7 @@ figure.use4slideshow figcaption {
   position: absolute;
 }
 
-#slideShowPrevious:hover, #slideShowNext:hover {
+#slideShowPrevious:focus, #slideShowNext:focus {
   background-color: white;
   color: black;
 }
