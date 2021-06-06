@@ -36,7 +36,7 @@ function init() {
   initNavigation();
   initOverview();
   //initGalery(randomNumber(1, 199));
-  initGalery(2);
+  initGalery(10);
 
   selectPage(window.location.search);
 
@@ -177,7 +177,7 @@ function initGalery(imgID) {
 function showPicture(imgID) {
   let figureElem = $('#slideShowFigure');
   figureElem.setAttribute('data-img-id', imgID);
-  let img = figureElem.firstElementChild;
+  let img = figureElem.lastElementChild;
 
   let top = figureElem.getBoundingClientRect().top;
   let imgHeigth = window.innerHeight - top - 70;
