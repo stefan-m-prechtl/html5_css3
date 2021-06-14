@@ -1,0 +1,82 @@
+/* Allgemein */
+.hideDiv {
+   display: none;
+}
+
+/* Farben, Abstände */
+
+:root {
+   --BodyBackgroundColor: pink;
+   --BodyColor: black;
+   --HeaderBackgroundColor: #b3d9ff;
+   --HeaderColor: #004080;
+   --NavBackgroundColor: #80bfff;
+   --NavColor: #005580;
+   --ContentBackgroundColor: white;
+   --AsideBackgroundColor: ghostwhite;
+   --FooterBackgroundColor: grey;
+}
+
+body {
+   background-color: var(--BodyBackgroundColor);
+   color: var(--BodyColor);
+   margin: 0rem auto;
+}
+
+.site-header {
+   background-color: var(--HeaderBackgroundColor);
+   color: var(--HeaderColor);
+   padding-left: 10px;
+   padding-top: 5px;
+}
+
+.site-nav {
+   background-color: var(--NavBackgroundColor);
+   color: var(--NavColor);
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+.site-content {
+   background-color: var(--ContentBackgroundColor);
+   padding: 1rem;
+}
+
+.site-aside {
+   background-color: var(--AsideBackgroundColor);
+   padding: 1rem;
+}
+
+.site-footer {
+   background-color: var(--FooterBackgroundColor);
+   padding: 10px 5px;
+}
+
+/* Navigation */
+
+.site-nav ul {
+   list-style-type: none;
+}
+
+.site-nav a {
+   text-decoration: none;
+   color: #005580;
+   padding-top: 0.5rem;
+}
+
+.site-nav a:link {
+   color: #005580;
+}
+
+.site-content a:visited {
+   color: #005580;
+}
+
+.site-nav a:focus {
+   background: #0b74b8;
+   color: white;
+}
+
+.site-nav a:active {
+   color: red;
+}

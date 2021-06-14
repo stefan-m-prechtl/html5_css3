@@ -1,0 +1,7 @@
+/* ================================================================
+  Zentrales Stylesheet mit inlcudes; in Html-Seite eingebunden
+  ============================================================== */
+
+@import url("basic.css");
+@import url("layout.css");
+@import url("gridlayout.css");
