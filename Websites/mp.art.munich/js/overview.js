@@ -3,29 +3,29 @@ import { Storage } from './storage.js'
 
 export function initOverview() {
 
-    let data = Storage.get('data');
-    console.log(data);
-
     // Übersicht
     let sectionPicture = $('.site-content-pictures')
 
-    for (let index = 1; index < 200; index++) {
+    // Bilddaten aus Registry holen
+    let pictureList = Storage.valueList();
+
+
+    for (let picture of pictureList) {
         let figureElem = document.createElement('figure')
         let imgElem = document.createElement('img')
         let figcaptionElem = document.createElement('figcaption')
 
-        imgElem.alt = 'bild' + String(index)
+        imgElem.alt = picture.title;
         imgElem.loading = 'lazy'
-        imgElem.src = 'pic/image' + String(index) + '.jpg'
+        imgElem.src = 'pic/' + picture.file
 
-        figcaptionElem.textContent = 'Bild' + String(index)
+        figcaptionElem.textContent = picture.title;
+        figureElem.classList.add('use4slideshow')
 
         figureElem.appendChild(imgElem)
         figureElem.appendChild(figcaptionElem)
-        figureElem.classList.add('use4slideshow')
-
         sectionPicture.appendChild(figureElem)
-    }
+    };
 
     let bntOneColum = $('#oneColumn')
     let bntTwoColum = $('#twoColumn')
@@ -49,15 +49,33 @@ export function initOverview() {
         figureElem.on('dblclick', (e) => {
             handleDblClickOnOverviewPic(e);
         })
-
-        // Modaldialog "Close"  
-        let close = $('.close');
-        close.on('click', () => {
-            let modal = $('#modal');
-            modal.classList.add('hideDiv');
+        figureElem.on('click', (e) => {
+            handleClickOnOverviewPic(e);
         })
 
     });
+
+    // Modaldialog "Close"  
+    let close = $('.close');
+    close.on('click', () => {
+        let modal = $('#modal');
+        modal.classList.add('hideDiv');
+    })
+}
+
+function handleClickOnOverviewPic(e) {
+    let elem = e.target;
+    if (elem.nodeName === 'IMG') {
+        let src = elem.getAttribute('src')
+        // Bilder sind im Ordner "pic/"
+        let imageKey = src.slice(4);
+
+        let picture = Storage.get(imageKey);
+        let description = picture.desc;
+
+        let descElement = $('#overview-description');
+        descElement.innerHTML = description;
+    }
 }
 
 function handleDblClickOnOverviewPic(e) {

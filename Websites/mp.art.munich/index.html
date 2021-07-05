@@ -58,8 +58,8 @@
 
     <div id="modal" class="hideDiv">
       <span class="close">&times;</span>
-      <figure id=modalFigure>
-        <figcaption id=modalFigcaption>Aktuelles Bild</figcaption>
+      <figure id="modalFigure">
+        <figcaption id="modalFigcaption">Aktuelles Bild</figcaption>
         <img id="modalImage" src="pic/image1.jpg" alt="Aktuelles Bild">
       </figure>
     </div>
@@ -71,7 +71,7 @@
       </header>
       <section class="site-content-slideshow">
         <figure id="slideShowFigure" data-img-id="100">
-          <figcaption id=slideShowFigcaption>
+          <figcaption id="slideShowFigcaption">
             <a id="slideShowPrevious">&#10094;</a>
             <span id="slideShowFigcaptionText">Aktuelles Bild</span>
             <a id="slideShowNext">&#10095;</a>
@@ -121,14 +121,19 @@
         assumenda deserunt nesciunt. Soluta vero optio eligendi amet adipisci sapiente, minima libero facilis sit.</p>
     </div>
     <div id="overview-aside" class="virtualpage hideDiv">
-      <header>Übersicht Aside</header>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa facere minus nisi modi laborum officia atque
-        assumenda deserunt nesciunt. Soluta vero optio eligendi amet adipisci sapiente, minima libero facilis sit.</p>
+      <header>
+        <h5>Informationen</h5>
+        <p>Mit einem Klick auf Bild erhalten Sie hier weitere Informationen</p>
+        <p>Ein Doppelklick zeigt das Bild im Vollmodus</p>
+      </header>
+      <p id="overview-description"></p>
+
     </div>
     <div id="galery-aside" class="virtualpage hideDiv">
-      <header>Galerie Aside</header>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa facere minus nisi modi laborum officia atque
-        assumenda deserunt nesciunt. Soluta vero optio eligendi amet adipisci sapiente, minima libero facilis sit.</p>
+      <header>
+        <h5>Informationen</h5>
+      </header>
+      <p id="galery-description"></p>
     </div>
     <div id="vita-aside" class="virtualpage hideDiv">
       <header>Vita Aside</header>

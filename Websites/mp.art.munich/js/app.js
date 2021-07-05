@@ -26,20 +26,38 @@ function init() {
   // temp. während Entwicklung 
   window.addEventListener('resize', reportWindowSize);
 
-  Storage.add('data', 'Daten aus Storage');
-
   initNavigation();
   initRouting();
 
-  initOverview();
-  initGalery(10);
+
+  // Daten für Bilder asynchron laden und in Storage ablegen, dann weitere Initialisierung durchführen
+  loadPictureData().then(res => {
+    initOverview();
+    initGalery(10);
+  });
 
   // Startseite aktivieren
   selectPage(window.location.search);
 
-
 }
 
+async function loadPictureData() {
+  const response = await fetch('./data.json');
+  const json = await response.json();
+  json.forEach(item => {
+    let picture = new Picture(item);
+    Storage.add(picture.file, picture);
+  });
+
+  return Storage.size();
+}
+
+
+class Picture {
+  constructor(options = {}) {
+    Object.assign(this, options);
+  }
+}
 
 // temp. während Entwicklung
 function gcd(a, b) {

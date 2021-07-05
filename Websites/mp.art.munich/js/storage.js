@@ -8,5 +8,12 @@ export const Storage = {
     },
     get(key) {
         return this.data.get(key)
+    },
+    valueList() {
+        let result = Array.from(this.data.values());
+        return result;
+    },
+    size() {
+        return this.data.size;
     }
 }

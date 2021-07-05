@@ -32,10 +32,10 @@
       "type": "firefox",
       "request": "launch",
       "reAttach": true,
-      "url": "http://127.0.0.1:5500/Websites/mp.art.munich/index.html",
+      "url": "http://127.0.0.1:5501/Websites/mp.art.munich/index.html",
       "pathMappings": [
         {
-          "url": "http://127.0.0.1:5500",
+          "url": "http://127.0.0.1:5501",
           "path": "${workspaceFolder}"
         }
       ]
