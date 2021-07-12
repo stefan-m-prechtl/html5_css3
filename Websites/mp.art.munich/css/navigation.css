@@ -6,11 +6,6 @@
    list-style-type: none;
 }
 
-.currentnav {
-   background: #0b74b8;
-   color: white;
-}
-
 .site-nav a {
    text-decoration: none;
    color: #005580;
@@ -21,6 +16,10 @@
    color: #005580;
 }
 
+.site-content a:visited {
+   color: #005580;
+}
+
 .site-nav a:focus {
    background: #0b74b8;
    color: white;
@@ -28,4 +27,9 @@
 
 .site-nav a:active {
    color: red;
+}
+
+.nav_current_link {
+   background: #0b74b8;
+   color: white !important;
 }

@@ -53,9 +53,4 @@ function showPicture(imgID) {
     let descElement = $('#galery-description');
     descElement.innerHTML = picture.desc;
 
-
-
-
-
-
 }

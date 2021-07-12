@@ -18,6 +18,7 @@ export function initOverview() {
         imgElem.alt = picture.title;
         imgElem.loading = 'lazy'
         imgElem.src = 'pic/' + picture.file
+        imgElem.setAttribute('data-key', picture.file);
 
         figcaptionElem.textContent = picture.title;
         figureElem.classList.add('use4slideshow')
@@ -60,7 +61,14 @@ export function initOverview() {
     close.on('click', () => {
         let modal = $('#modal');
         modal.classList.add('hideDiv');
-    })
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "Escape") {
+            let modal = $('#modal');
+            modal.classList.add('hideDiv');
+        }
+    });
 }
 
 function handleClickOnOverviewPic(e) {
@@ -82,16 +90,25 @@ function handleDblClickOnOverviewPic(e) {
 
     let elem = e.target;
     if (elem.nodeName === 'IMG') {
+
+        // Bild im Dialog aktualisieren
         let src = elem.getAttribute('src')
         let alt = elem.getAttribute('alt')
 
+        let img = $('#modalImage');
+        img.src = src;
+        img.alt = alt;
+
+        // Beschriftung aktualisieren
+        let caption = $('#modalFigcaption');
+        let picture = Storage.get(elem.getAttribute('data-key'));
+        let desc = picture.desc;
+        caption.innerHTML = `<h6>${alt}</h6><p>${desc}}</p>`
+
+        // "Dialog" einblenden
         let modalDiv = $('#modal');
         modalDiv.classList.remove('hideDiv');
 
-        let img = $('#modalImage');
-        img.src = src;
-        let caption = $('#modalFigcaption');
-        caption.textContent = alt;
 
     }
 }

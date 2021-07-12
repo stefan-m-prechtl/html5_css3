@@ -4,3 +4,6 @@
 
 @import url("basis.css");
 @import url("layout.css");
+@import url("navigation.css");
+/* für Responsive Gestaltung */
+@import url("gridlayout.css");

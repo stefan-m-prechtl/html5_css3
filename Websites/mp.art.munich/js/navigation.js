@@ -47,12 +47,22 @@ function showPage(pageName) {
 
     let selector = '[href=\'' + pageName + '\']';
     let navLink = $(selector);
-    navLink.focus();
+    selectNavLink(navLink)
 
     let currentPage = $('#' + pageName);
     currentPage.classList.remove('hideDiv');
     let currentAside = $('#' + pageName + '-aside');
     currentAside.classList.remove('hideDiv');
+}
+
+function selectNavLink(link) {
+    link.focus();
+
+    let allLinks = $$('.nav_link');
+    for (let curLink of allLinks) {
+        curLink.classList.remove('nav_current_link');
+    }
+    link.classList.add('nav_current_link');
 }
 
 
