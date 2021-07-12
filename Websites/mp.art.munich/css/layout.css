@@ -127,7 +127,7 @@ figure.use4slideshow figcaption {
    cursor: pointer;
 }
 
-/* Übersicht: Navigation */
+/* Übersicht */
 
 .site-content-pictures-nav {
    display: grid;
@@ -136,7 +136,46 @@ figure.use4slideshow figcaption {
    justify-content: center;
 }
 
+#overview-aside {
+   position: fixed;
+}
+
+#imginfo {
+   margin-top: 25px;
+   background-color: #b3d9ff;
+   border-right: 6px solid #005580;
+}
+#imginfo > h5 {
+   padding-top: 10px;
+   padding-left: 5px;
+}
+
+#imginfo > p {
+   padding-left: 5px;
+   padding-bottom: 15px;
+}
+
+#usertip {
+   color: gray;
+   margin-top: 50px;
+}
+#usertip > h5 {
+   margin-bottom: 10px;
+}
+#usertip > p {
+   font-size: 1.3rem;
+   font-variant-caps: titling-caps;
+}
+
 /* Galerie */
+
+#sliderdiv {
+   width: 100%;
+}
+
+#slider {
+   width: 100%;
+}
 
 #slideShowFigcaption {
    background: rgba(0, 0, 0, 0.5);

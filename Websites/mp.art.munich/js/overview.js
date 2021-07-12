@@ -9,7 +9,6 @@ export function initOverview() {
     // Bilddaten aus Registry holen
     let pictureList = Storage.valueList();
 
-
     for (let picture of pictureList) {
         let figureElem = document.createElement('figure')
         let imgElem = document.createElement('img')
@@ -73,13 +72,18 @@ export function initOverview() {
 
 function handleClickOnOverviewPic(e) {
     let elem = e.target;
-    if (elem.nodeName === 'IMG') {
-        let src = elem.getAttribute('src')
-        // Bilder sind im Ordner "pic/"
-        let imageKey = src.slice(4);
+    if (elem.nodeName === 'FIGURE') {
+        elem = elem.firstChild;
+    }
 
-        let picture = Storage.get(imageKey);
+    if (elem.nodeName === 'IMG') {
+
+        let picture = Storage.get(elem.getAttribute('data-key'));
+        let title = picture.title;
         let description = picture.desc;
+
+        let h5Element = $('#overview-description_h5');
+        h5Element.innerHTML = `Info zu "${title}"`;
 
         let descElement = $('#overview-description');
         descElement.innerHTML = description;
@@ -89,6 +93,9 @@ function handleClickOnOverviewPic(e) {
 function handleDblClickOnOverviewPic(e) {
 
     let elem = e.target;
+    if (elem.nodeName === 'FIGURE') {
+        elem = elem.firstChild;
+    }
     if (elem.nodeName === 'IMG') {
 
         // Bild im Dialog aktualisieren
@@ -103,12 +110,11 @@ function handleDblClickOnOverviewPic(e) {
         let caption = $('#modalFigcaption');
         let picture = Storage.get(elem.getAttribute('data-key'));
         let desc = picture.desc;
-        caption.innerHTML = `<h6>${alt}</h6><p>${desc}}</p>`
+        caption.innerHTML = `<h6>${alt}</h6><p>${desc}</p>`
 
         // "Dialog" einblenden
         let modalDiv = $('#modal');
         modalDiv.classList.remove('hideDiv');
-
 
     }
 }

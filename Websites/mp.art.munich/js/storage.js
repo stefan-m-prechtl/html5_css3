@@ -1,5 +1,6 @@
 export const Storage = {
     data: new Map(),
+
     clearData() {
         this.data = new Map()
     },

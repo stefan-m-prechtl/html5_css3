@@ -72,6 +72,10 @@
       <header>
         <h1>Galerie</h1>
       </header>
+      <div id="sliderdiv">
+        <input type="range" id="slider" min="0" max="141" step="1.0" value="11">
+      </div>
+
       <section class="site-content-slideshow">
         <figure id="slideShowFigure" data-img-id="100">
           <figcaption id="slideShowFigcaption">
@@ -123,12 +127,17 @@
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa facere minus nisi modi laborum officia atque
         assumenda deserunt nesciunt. Soluta vero optio eligendi amet adipisci sapiente, minima libero facilis sit.</p>
     </div>
+
     <div id="overview-aside" class="virtualpage hideDiv">
-      <header>
-        <h5>Informationen</h5>
-        <p>Ein Doppelklick zeigt das Bild im Vollmodus</p>
+      <header id="imginfo">
+        <h5 id="overview-description_h5">Info zu aktuellen Bild</h5>
+        <p id="overview-description"></p>
       </header>
-      <p id="overview-description"></p>
+      <header id="usertip">
+        <h5>Bedienhinweis</h5>
+        <p>Ein Klick zeigt Informationen zum Bild<br>
+          Ein Doppelklick zeigt das Bild im Vollmodus</p>
+      </header>
 
     </div>
     <div id="galery-aside" class="virtualpage hideDiv">
@@ -137,6 +146,7 @@
       </header>
       <p id="galery-description"></p>
     </div>
+
     <div id="vita-aside" class="virtualpage hideDiv">
       <header>Vita Aside</header>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa facere minus nisi modi laborum officia atque

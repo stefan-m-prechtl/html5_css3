@@ -23,12 +23,8 @@ const originHref = window.location.origin + window.location.pathname;
  */
 function init() {
 
-  // temp. während Entwicklung 
-  window.addEventListener('resize', reportWindowSize);
-
   initNavigation();
   initRouting();
-
 
   // Daten für Bilder asynchron laden und in Storage ablegen, dann weitere Initialisierung durchführen
   loadPictureData().then(res => {
@@ -59,32 +55,6 @@ class Picture {
   }
 }
 
-// temp. während Entwicklung
-function gcd(a, b) {
-  return (b == 0) ? a : gcd(b, a % b);
-}
-
-function reportWindowSize() {
-  let elem = $('#sizeinfo')
-  let w = window.innerWidth;
-  let h = window.innerHeight;
-
-  let txt = '';
-
-  let r = gcd(w, h);
-  let a = (w / r) + ":" + (h / r);
-
-  let wAsEM = w / parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
-
-  if (window.matchMedia("(orientation: portrait)").matches) {
-    txt = 'aspect: ' + a + ', width (em)=' + wAsEM + ', height (px)=' + h + ', portrait';
-  }
-
-  if (window.matchMedia("(orientation: landscape)").matches) {
-    txt = 'aspect: ' + a + ', width (em)=' + wAsEM + ', height (px)=' + h + ', landscape';
-  }
-  elem.innerHTML = txt;
-}
 
 
 

@@ -56,13 +56,11 @@ function showPage(pageName) {
 }
 
 function selectNavLink(link) {
-    link.focus();
-
-    let allLinks = $$('.nav_link');
-    for (let curLink of allLinks) {
-        curLink.classList.remove('nav_current_link');
-    }
+    // Klasse für aktivien Navigationslink neu setzen    
+    let oldLink = $('.nav_current_link');
+    oldLink.classList.remove('nav_current_link');
     link.classList.add('nav_current_link');
+    link.focus();
 }
 
 

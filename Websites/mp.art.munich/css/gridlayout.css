@@ -200,4 +200,7 @@
       /* Links und rechts einrücken */
       margin: 0 5em;
    }
+   #overview-aside {
+      margin-right: 5.5em;
+   }
 }
